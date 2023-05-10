@@ -5,8 +5,10 @@ module.exports = {
     extend: {
       colors:{
         primary: 'var(--color-primary)',
-        "text-default": 'rgb(51,51,51)',
+        "text-default": '#666666',
         "search": '#CBCCCC',
+        "text-default-darker":"#333333",
+
 
       },
       boxShadow: {
