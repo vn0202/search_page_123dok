@@ -533,6 +533,10 @@ html {
   --tw-backdrop-sepia:  ;
 }
 
+.invisible {
+  visibility: hidden;
+}
+
 .fixed {
   position: fixed;
 }
@@ -681,6 +685,14 @@ html {
   display: none;
 }
 
+.aspect-square {
+  aspect-ratio: 1 / 1;
+}
+
+.aspect-\[3\/4\] {
+  aspect-ratio: 3/4;
+}
+
 .h-12 {
   height: 3rem;
 }
@@ -699,6 +711,10 @@ html {
 
 .h-8 {
   height: 2rem;
+}
+
+.h-full {
+  height: 100%;
 }
 
 .w-11\/12 {
@@ -741,9 +757,17 @@ html {
   width: 1px;
 }
 
+.w-4 {
+  width: 1rem;
+}
+
 .min-w-fit {
   min-width: -moz-fit-content;
   min-width: fit-content;
+}
+
+.max-w-4xl {
+  max-width: 56rem;
 }
 
 .max-w-6xl {
@@ -829,6 +853,10 @@ html {
 
 .gap-8 {
   gap: 2rem;
+}
+
+.self-center {
+  align-self: center;
 }
 
 .scroll-smooth {
@@ -1173,6 +1201,11 @@ html {
     position: relative;
   }
 
+  .md\:mx-0 {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+
   .md\:mx-6 {
     margin-left: 1.5rem;
     margin-right: 1.5rem;
@@ -1193,10 +1226,6 @@ html {
 
   .md\:ml-4 {
     margin-left: 1rem;
-  }
-
-  .md\:ml-9 {
-    margin-left: 2.25rem;
   }
 
   .md\:mr-3 {
@@ -1229,6 +1258,10 @@ html {
 
   .md\:hidden {
     display: none;
+  }
+
+  .md\:aspect-auto {
+    aspect-ratio: auto;
   }
 
   .md\:h-14 {
@@ -1285,6 +1318,10 @@ html {
 
   .md\:gap-8 {
     gap: 2rem;
+  }
+
+  .md\:gap-6 {
+    gap: 1.5rem;
   }
 
   .md\:rounded-2xl {
@@ -1375,5 +1412,11 @@ html {
 
   .lg\:flex-row {
     flex-direction: row;
+  }
+}
+
+@media (min-width: 1280px) {
+  .xl\:max-w-5xl {
+    max-width: 64rem;
   }
 }
