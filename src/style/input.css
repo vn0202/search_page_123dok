@@ -9,4 +9,7 @@
         --color-text-default: #fffff;
         --color-text-search:#CBCCCC,
     }
+    html {
+        font-family: "Be Vietnam Pro", system-ui, sans-serif;
+    }
 }
