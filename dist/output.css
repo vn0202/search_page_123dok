@@ -1211,6 +1211,10 @@ html {
     margin-top: 0px;
   }
 
+  .md\:block {
+    display: block;
+  }
+
   .md\:inline-block {
     display: inline-block;
   }
@@ -1361,5 +1365,15 @@ html {
 
   .peer:focus ~ .peer-focus\:md\:block {
     display: block;
+  }
+}
+
+@media (min-width: 1024px) {
+  .lg\:flex {
+    display: flex;
+  }
+
+  .lg\:flex-row {
+    flex-direction: row;
   }
 }
