@@ -7,7 +7,8 @@
     :root {
         --color-primary: #00A888;
         --color-text-default: #fffff;
-        --color-text-search:#CBCCCC,
+        --color-text-search:#CBCCCC;
+        --color-secondary:#FFAA00;
     }
     html {
         font-family: "Be Vietnam Pro", system-ui, sans-serif;

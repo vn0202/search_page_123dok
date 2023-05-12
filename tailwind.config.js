@@ -2,14 +2,19 @@
 const defaultTheme = require('tailwindcss/defaultTheme');
 
 module.exports = {
-  content: ["./src/**/*.{html,js}"],
+  content: [
+      "./src/**/*.{html,js}",
+      "*.{html,js}"
+  ],
   theme: {
     extend: {
       colors:{
         primary: 'var(--color-primary)',
+        secondary:'var(--color-secondary)',
         "text-default": '#666666',
         "search": '#CBCCCC',
         "text-default-darker":"#333333",
+
 
 
       },
