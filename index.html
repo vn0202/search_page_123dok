@@ -12,67 +12,70 @@
     <title>Document</title>
 </head>
 <body>
-<header id="header" class="flex p-4 justify-between  shadow-3xl fixed top-0 left-0 z-50 right-0 bg-white">
-    <div class="logo flex p-4 gap-4 items-center justify-between md:justify-start grow">
-        <svg class="w-6 h-6" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M10 14H38" stroke="#33363F" stroke-width="2" stroke-linecap="round"/>
-            <path d="M10 24H38" stroke="#33363F" stroke-width="2" stroke-linecap="round"/>
-            <path d="M10 34H38" stroke="#33363F" stroke-width="2" stroke-linecap="round"/>
-        </svg>
-        <img src="./src/assets/images/logo.png" alt="" class=" h-5 object-fit">
-        <div class="flex md:hidden items-center gap-2">
-            <svg class="w-5 h-5  " viewBox="0 0 24 24" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
-                 enable-background="new 0 0 24 24">
+<header id="header" class=" px-4 lg:px-0 shadow-3xl fixed top-0 left-0 z-50 right-0 bg-white">
+    <div class="container mx-auto flex  justify-between md:py-4">
+        <div class="logo flex py-4 gap-4 items-center justify-between md:justify-start grow">
+            <svg class="w-12 h-12" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M10 14H38" stroke="#33363F" stroke-width="2" stroke-linecap="round"/>
+                <path d="M10 24H38" stroke="#33363F" stroke-width="2" stroke-linecap="round"/>
+                <path d="M10 34H38" stroke="#33363F" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+            <img src="./src/assets/images/logo.png" alt="" class="w-[104px] object-cover">
+            <div class="flex md:hidden items-center gap-2">
+                <svg class="w-5 h-5  " viewBox="0 0 24 24" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
+                     enable-background="new 0 0 24 24">
                 <path
-                    d="M13.7 20h-3.5c-.7 0-1.3.8-.9 1.5.6.9 1.6 1.5 2.7 1.5s2.1-.6 2.6-1.5c.4-.7-.1-1.5-.9-1.5zM21.8 16.7l-.4-.5C19.8 14.1 19 11.6 19 9v-.7c0-3.6-2.6-6.8-6.2-7.2C8.6.6 5 3.9 5 8v1c0 2.6-.8 5.1-2.4 7.2l-.4.5c-.2.2-.3.6-.2.8.3.9 1.1 1.5 2 1.5h16c.9 0 1.7-.6 1.9-1.5.1-.3 0-.6-.1-.8z"
-                    fill="#333333" class="fill-000000"></path></svg>
+                        d="M13.7 20h-3.5c-.7 0-1.3.8-.9 1.5.6.9 1.6 1.5 2.7 1.5s2.1-.6 2.6-1.5c.4-.7-.1-1.5-.9-1.5zM21.8 16.7l-.4-.5C19.8 14.1 19 11.6 19 9v-.7c0-3.6-2.6-6.8-6.2-7.2C8.6.6 5 3.9 5 8v1c0 2.6-.8 5.1-2.4 7.2l-.4.5c-.2.2-.3.6-.2.8.3.9 1.1 1.5 2 1.5h16c.9 0 1.7-.6 1.9-1.5.1-.3 0-.6-.1-.8z"
+                        fill="#333333" class="fill-000000"></path></svg>
+                <div class="flex items-center ">
+            <span
+                    class="inline-flex  w-8 h-8 bg-[#5D789B] rounded-full  text-white text-base font-medium items-center justify-center">
+                N
+            </span>
+                    <svg class="w-8 h-8" viewBox="0 0 64 64" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
+                         enable-background="new 0 0 64 64"><path d="m-218.7-308.6 2-2 11.7 11.8 11.7-11.8 2 2-13.7 13.7-13.7-13.7" transform="translate(237 335)" fill="#33363f" class="fill-134563"></path></svg>
+                </div>
+            </div>
+
+        </div>
+        <div class=" gap-4 items-center hidden md:flex ">
+            <div class="border border-solid border-slate-300 inline-flex  rounded-3xl  gap-2 py-2 px-4 items-center">
+                <img src="./src/assets/images/global.png" alt="world" class="w-6 h-6 object-fit">
+                <span class="language text-base leading-7	 text-text-default-darker">English</span>
+            </div>
+            <div class="bg-primary inline-flex py-2 px-4 rounded-3xl gap-2 items-center">
+                <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                          d="M20.001 10.4794C19.9896 4.95657 15.5032 0.488644 9.98038 0.500017C4.45754 0.51139 -0.0103799 4.99775 0.000993226 10.5206C0.0116713 15.7059 3.96712 19.9613 9.02147 20.4527L9.00183 10.9163L5.71572 14.2159L4.2986 12.8046L9.28829 7.79435L9.99394 7.08579L10.7025 7.79144L15.7128 12.7811L14.3015 14.1983L11.0018 10.9121L11.0215 20.4485C16.0737 19.9364 20.0116 15.6647 20.001 10.4794Z"
+                          fill="white"/>
+                </svg>
+                <span class="text-lg text-white">Upload</span>
+            </div>
+            <div>
+                <svg class="w-6 h-6" viewBox="0 0 24 24" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
+                     enable-background="new 0 0 24 24">
+                <path
+                        d="M13.7 20h-3.5c-.7 0-1.3.8-.9 1.5.6.9 1.6 1.5 2.7 1.5s2.1-.6 2.6-1.5c.4-.7-.1-1.5-.9-1.5zM21.8 16.7l-.4-.5C19.8 14.1 19 11.6 19 9v-.7c0-3.6-2.6-6.8-6.2-7.2C8.6.6 5 3.9 5 8v1c0 2.6-.8 5.1-2.4 7.2l-.4.5c-.2.2-.3.6-.2.8.3.9 1.1 1.5 2 1.5h16c.9 0 1.7-.6 1.9-1.5.1-.3 0-.6-.1-.8z"
+                        fill="#333333" class="fill-000000"></path></svg>
+            </div>
             <div class="flex items-center ">
             <span
-                class="inline-flex  w-8 h-8 bg-[#5D789B] rounded-full  text-white text-base font-medium items-center justify-center">
+                    class="inline-flex  w-12 h-12 bg-[#5D789B] rounded-full  text-white text-2xl font-medium items-center justify-center">
                 N
             </span>
                 <svg class="w-8 h-8" viewBox="0 0 64 64" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
                      enable-background="new 0 0 64 64"><path d="m-218.7-308.6 2-2 11.7 11.8 11.7-11.8 2 2-13.7 13.7-13.7-13.7" transform="translate(237 335)" fill="#33363f" class="fill-134563"></path></svg>
             </div>
         </div>
+    </div>
 
-    </div>
-    <div class=" gap-4 items-center hidden md:flex ">
-        <div class="border border-solid border-slate-300 inline-flex  rounded-3xl  gap-2 py-2 px-4 items-center">
-            <img src="./src/assets/images/global.png" alt="world" class="w-6 h-6 object-fit">
-            <span class="language text-base leading-7	 text-text-default-darker">English</span>
-        </div>
-        <div class="bg-primary inline-flex py-2 px-4 rounded-3xl gap-2 items-center">
-            <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path fill-rule="evenodd" clip-rule="evenodd"
-                      d="M20.001 10.4794C19.9896 4.95657 15.5032 0.488644 9.98038 0.500017C4.45754 0.51139 -0.0103799 4.99775 0.000993226 10.5206C0.0116713 15.7059 3.96712 19.9613 9.02147 20.4527L9.00183 10.9163L5.71572 14.2159L4.2986 12.8046L9.28829 7.79435L9.99394 7.08579L10.7025 7.79144L15.7128 12.7811L14.3015 14.1983L11.0018 10.9121L11.0215 20.4485C16.0737 19.9364 20.0116 15.6647 20.001 10.4794Z"
-                      fill="white"/>
-            </svg>
-            <span class="text-lg text-white">Upload</span>
-        </div>
-        <div>
-            <svg class="w-6 h-6" viewBox="0 0 24 24" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
-                 enable-background="new 0 0 24 24">
-                <path
-                    d="M13.7 20h-3.5c-.7 0-1.3.8-.9 1.5.6.9 1.6 1.5 2.7 1.5s2.1-.6 2.6-1.5c.4-.7-.1-1.5-.9-1.5zM21.8 16.7l-.4-.5C19.8 14.1 19 11.6 19 9v-.7c0-3.6-2.6-6.8-6.2-7.2C8.6.6 5 3.9 5 8v1c0 2.6-.8 5.1-2.4 7.2l-.4.5c-.2.2-.3.6-.2.8.3.9 1.1 1.5 2 1.5h16c.9 0 1.7-.6 1.9-1.5.1-.3 0-.6-.1-.8z"
-                    fill="#333333" class="fill-000000"></path></svg>
-        </div>
-        <div class="flex items-center ">
-            <span
-                class="inline-flex  w-12 h-12 bg-[#5D789B] rounded-full  text-white text-2xl font-medium items-center justify-center">
-                N
-            </span>
-            <svg class="w-8 h-8" viewBox="0 0 64 64" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
-                 enable-background="new 0 0 64 64"><path d="m-218.7-308.6 2-2 11.7 11.8 11.7-11.8 2 2-13.7 13.7-13.7-13.7" transform="translate(237 335)" fill="#33363f" class="fill-134563"></path></svg>
-        </div>
-    </div>
 </header>
-<main class="mt-24 pt-8">
-    <div class="container w-full mx-auto">
-        <div class=" container_search relative border border-slate-300 rounded-4xl mx-2 md:mx-6 flex items-center ">
+<main class="mt-32 md:pt-8 ">
+    <div class="container w-full mx-auto ">
+        <div class=" container_search mx-4 lg:mx-0 relative border border-slate-300 rounded-4xl   flex items-center ">
             <div class="md:relative grow flex items-center justify-between md:mr-3">
                 <input id="search_global"
-                       class="search mx-7 md:pl-6 w-full  py-2 md:py-7  outline-none placeholder:text-base   md:placeholder:text-lg placeholder:font-medium placeholder:text-search  peer "
+                       class="search rounded-4xl  md:pl-6 w-full  px-4 py-2 md:py-7  outline-none placeholder:text-base   md:placeholder:text-lg placeholder:font-medium placeholder:text-search  peer "
                        type="text" placeholder="Search for documents, universities and other resources">
                 <svg class="hidden peer-focus:block w-6 md:w-9" width="34" height="32" viewBox="0 0 34 32" fill="none"
                      xmlns="http://www.w3.org/2000/svg">
@@ -82,11 +85,10 @@
                           stroke-linejoin="round"/>
                 </svg>
                 <div class=" hidden peer-focus:md:block w-px h-8 md:h-14 bg-text-default-darker ml-2 md:ml-4"></div>
-                <ul class="hidden absolute border shadow border-slate-300 rounded bg-white  w-full peer-focus:block"
-                    style="top: calc(100% + 20px)">
+                <ul class="hidden absolute border shadow border-slate-300 rounded bg-white  w-full peer-focus:block top-[calc(100%+10px)] md:top-[calc(100%+20px)]" >
                     <li class="hover:bg-slate-100 px-2.5">
                         <a href="" class="text-base text-text-default-darker inline-block p-2 font-medium">
-                            International Human Resources Management
+                            International Human Resources PM
                         </a>
                     </li>
                     <li class="hover:bg-slate-100 px-2.5">
@@ -107,7 +109,7 @@
                 </ul>
             </div>
 
-            <a href="" class="mr-6">
+            <a href="" class="mr-4 md:mr-6">
                 <svg class="w-5 md:w-10" width="41" height="38" viewBox="0 0 41 38" fill="none"
                      xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd" clip-rule="evenodd"
@@ -117,7 +119,7 @@
             </a>
 
         </div>
-        <div class="px-2 md:px-10 my-5 flex flex-col gap-8 md:flex-row justify-between">
+        <div class="  my-5 px-4 lg:px-0 flex flex-col gap-3 md:gap-8 md:flex-row justify-between">
             <div class="filter_by_school w-full md:w-2/5">
                 <div class="p-2 flex gap-2 items-center md:mb-4">
                     <svg width="24" height="20" viewBox="0 0 24 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -149,8 +151,7 @@
 
         </div>
         <div class="mt-10 mb-10">
-            <ul class="flex md:gap-6 flex-row md:flex-col md:px-5 flex-wrap">
-
+            <ul class="flex md:gap-6 flex-row md:flex-col  flex-wrap lg:-ml-4">
                 <li class="flex px-1 mb-2 md:mb-0 flex-col md:gap-8 md:flex-row   md:px-5 md:py-4 hover:bg-[#F5FAF9]  rounded md:rounded-3xl basis-1/2 md:basis-full ">
                     <div class="aspect-[3/4] md:aspect-auto" >
                         <img
@@ -871,9 +872,6 @@
 
 
                 </li>
-
-
-
             </ul>
         </div>
     </div>
@@ -907,147 +905,150 @@
             Upload more documents and download any material studies right away!
         </h2>
     </div>
-    <div class="mt-10 mb-8 mx-2 container  md:mx-auto border border-solid rounded-xl max-w-6xl	">
-        <div class="px-4 md:px-28 flex flex-col md:flex-row items-center gap-5 mt-8 mb-12">
-            <span class="text-base font-semibold min-w-fit">Search documents by subject</span>
-            <div class="grow relative w-full ">
-                <input
-                    class="border border-solid border-slate-300 w-full focus:outline-none rounded-4xl p-4  placeholder:font-thin placeholder:text-text-default"
-                    type="search" name="search" placeholder="Type a subject">
-                <svg class="absolute top-1/2 -translate-y-2/4 right-7	" width="20" height="20" viewBox="0 0 20 20"
-                     fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path fill-rule="evenodd" clip-rule="evenodd"
-                          d="M2 9C2 5.13401 5.13401 2 9 2C12.866 2 16 5.13401 16 9C16 10.886 15.2541 12.5978 14.0412 13.8566C14.0071 13.8828 13.9742 13.9116 13.9429 13.9429C13.9116 13.9742 13.8828 14.0071 13.8566 14.0412C12.5978 15.2541 10.886 16 9 16C5.13401 16 2 12.866 2 9ZM14.6177 16.0319C13.078 17.2635 11.125 18 9 18C4.02944 18 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9C18 11.125 17.2635 13.078 16.0319 14.6177L19.7071 18.2929C20.0977 18.6834 20.0977 19.3166 19.7071 19.7071C19.3166 20.0977 18.6834 20.0977 18.2929 19.7071L14.6177 16.0319Z"
-                          fill="#99999A"/>
-                </svg>
+    <div class="mt-10 mb-8  container  md:mx-auto  max-w-6xl px-4	">
+        <div class="border border-solid rounded-xl">
+            <div class="px-4 md:px-28 flex flex-col md:flex-row items-center gap-5 mt-8 mb-12">
+                <span class="text-base font-semibold min-w-fit">Search documents by subject</span>
+                <div class="grow relative w-full ">
+                    <input
+                            class="border border-solid border-slate-300 w-full focus:outline-none rounded-4xl p-4  placeholder:font-thin placeholder:text-text-default"
+                            type="search" name="search" placeholder="Type a subject">
+                    <svg class="absolute top-1/2 -translate-y-2/4 right-7	" width="20" height="20" viewBox="0 0 20 20"
+                         fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                              d="M2 9C2 5.13401 5.13401 2 9 2C12.866 2 16 5.13401 16 9C16 10.886 15.2541 12.5978 14.0412 13.8566C14.0071 13.8828 13.9742 13.9116 13.9429 13.9429C13.9116 13.9742 13.8828 14.0071 13.8566 14.0412C12.5978 15.2541 10.886 16 9 16C5.13401 16 2 12.866 2 9ZM14.6177 16.0319C13.078 17.2635 11.125 18 9 18C4.02944 18 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9C18 11.125 17.2635 13.078 16.0319 14.6177L19.7071 18.2929C20.0977 18.6834 20.0977 19.3166 19.7071 19.7071C19.3166 20.0977 18.6834 20.0977 18.2929 19.7071L14.6177 16.0319Z"
+                              fill="#99999A"/>
+                    </svg>
+                </div>
             </div>
-        </div>
-        <div class="px-5 ">
-            <div class="flex items-center mb-2 flex-wrap justify-between">
-                <a href="" class="px-2.5 aspect-square  inline-flex items-center text-base font-medium text-primary self-center	">A</a>
-                <a href=""
-                   class="px-2.5  aspect-square inline-flex items-center  text-base font-medium text-primary rounded-full bg-primary text-white">B</a>
-                <a href="" class="px-2.5 aspect-square inline-flex items-center text-base font-medium text-primary">C</a>
-                <a href="" class="px-2.5 aspect-square inline-flex items-center text-base font-medium text-primary">D</a>
-                <a href="" class="px-2.5 aspect-square inline-flex items-center text-base font-medium text-primary">E</a>
-                <a href="" class="px-2.5 aspect-square inline-flex items-center text-base font-medium text-primary">F</a>
-                <a href="" class="px-2.5 aspect-square inline-flex items-center text-base font-medium text-primary">G</a>
-                <a href="" class="px-2.5 aspect-square inline-flex items-center text-base font-medium text-primary">H</a>
-                <a href="" class="px-2.5 aspect-square inline-flex items-center text-base font-medium text-primary">I</a>
-                <a href="" class="px-2.5 aspect-square inline-flex items-center text-base font-medium text-primary">J</a>
-                <a href="" class="px-2.5 aspect-square inline-flex items-center text-base font-medium text-primary">K</a>
-                <a href="" class="px-2.5 aspect-square inline-flex items-center text-base font-medium text-primary">L</a>
-                <a href="" class="px-2.5 aspect-square inline-flex items-center text-base font-medium text-primary">M</a>
-                <a href="" class="px-2.5 aspect-square inline-flex items-center text-base font-medium text-primary">N</a>
-                <a href="" class="px-2.5 aspect-square inline-flex items-center text-base font-medium text-primary">O</a>
-                <a href="" class="px-2.5 aspect-square inline-flex items-center text-base font-medium text-primary">P</a>
-                <a href="" class="px-2.5 aspect-square inline-flex items-center text-base font-medium text-primary">Q</a>
-                <a href="" class="px-2.5 aspect-square inline-flex items-center text-base font-medium text-primary">R</a>
-                <a href="" class="px-2.5 aspect-square inline-flex items-center text-base font-medium text-primary">S</a>
-                <a href="" class="px-2.5 aspect-square inline-flex items-center text-base font-medium text-primary">T</a>
-                <a href="" class="px-2.5 aspect-square inline-flex items-center text-base font-medium text-primary">U</a>
-                <a href="" class="px-2.5 aspect-square inline-flex items-center text-base font-medium text-primary">V</a>
-                <a href="" class="px-2.5 aspect-square inline-flex items-center text-base font-medium text-primary">W</a>
-                <a href="" class="px-2.5 aspect-square inline-flex items-center text-base font-medium text-primary">Y</a>
-                <a href="" class="px-2.5 aspect-square inline-flex items-center text-base font-medium text-primary">Z</a>
+            <div class="px-4 md:px-5 ">
+                <div class="flex items-center mb-2 flex-wrap justify-between">
+                    <a href="" class="px-2.5 aspect-square  inline-flex items-center text-base font-medium text-primary self-center	">A</a>
+                    <a href=""
+                       class="px-2.5  aspect-square inline-flex items-center  text-base font-medium text-primary rounded-full bg-primary text-white">B</a>
+                    <a href="" class="px-2.5 aspect-square inline-flex items-center text-base font-medium text-primary">C</a>
+                    <a href="" class="px-2.5 aspect-square inline-flex items-center text-base font-medium text-primary">D</a>
+                    <a href="" class="px-2.5 aspect-square inline-flex items-center text-base font-medium text-primary">E</a>
+                    <a href="" class="px-2.5 aspect-square inline-flex items-center text-base font-medium text-primary">F</a>
+                    <a href="" class="px-2.5 aspect-square inline-flex items-center text-base font-medium text-primary">G</a>
+                    <a href="" class="px-2.5 aspect-square inline-flex items-center text-base font-medium text-primary">H</a>
+                    <a href="" class="px-2.5 aspect-square inline-flex items-center text-base font-medium text-primary">I</a>
+                    <a href="" class="px-2.5 aspect-square inline-flex items-center text-base font-medium text-primary">J</a>
+                    <a href="" class="px-2.5 aspect-square inline-flex items-center text-base font-medium text-primary">K</a>
+                    <a href="" class="px-2.5 aspect-square inline-flex items-center text-base font-medium text-primary">L</a>
+                    <a href="" class="px-2.5 aspect-square inline-flex items-center text-base font-medium text-primary">M</a>
+                    <a href="" class="px-2.5 aspect-square inline-flex items-center text-base font-medium text-primary">N</a>
+                    <a href="" class="px-2.5 aspect-square inline-flex items-center text-base font-medium text-primary">O</a>
+                    <a href="" class="px-2.5 aspect-square inline-flex items-center text-base font-medium text-primary">P</a>
+                    <a href="" class="px-2.5 aspect-square inline-flex items-center text-base font-medium text-primary">Q</a>
+                    <a href="" class="px-2.5 aspect-square inline-flex items-center text-base font-medium text-primary">R</a>
+                    <a href="" class="px-2.5 aspect-square inline-flex items-center text-base font-medium text-primary">S</a>
+                    <a href="" class="px-2.5 aspect-square inline-flex items-center text-base font-medium text-primary">T</a>
+                    <a href="" class="px-2.5 aspect-square inline-flex items-center text-base font-medium text-primary">U</a>
+                    <a href="" class="px-2.5 aspect-square inline-flex items-center text-base font-medium text-primary">V</a>
+                    <a href="" class="px-2.5 aspect-square inline-flex items-center text-base font-medium text-primary">W</a>
+                    <a href="" class="px-2.5 aspect-square inline-flex items-center text-base font-medium text-primary">Y</a>
+                    <a href="" class="px-2.5 aspect-square inline-flex items-center text-base font-medium text-primary">Z</a>
+                </div>
+                <hr>
             </div>
-            <hr>
-        </div>
-        <div class="py-6 px-7 flex flex-wrap ">
-            <p class="p-2 text-base font-thin  text-text-default basis-1/2 md:basis-1/4	">
-                Bacteriology
-            </p>
-            <p class="p-2 text-base font-thin  text-text-default basis-1/2 md:basis-1/4">
-                Ballistic and Cruise Missile Technology
-            </p>
-            <p class="p-2 text-base font-thin  text-text-default basis-1/2 md:basis-1/4">
-                Band and choir
-            </p>
-            <p class="p-2 text-base font-thin  text-text-default basis-1/2 md:basis-1/4">
-                Banking and Finance
-            </p>
-            <p class="p-2 text-base font-thin  text-text-default basis-1/2 md:basis-1/4">
-                Bacteriology
-            </p>
-            <p class="p-2 text-base font-thin  text-text-default basis-1/2 md:basis-1/4">
-                Business Research Methods for Managers
-            </p>
-            <p class="p-2 text-base font-thin  text-text-default basis-1/2 md:basis-1/4">
-                Business InformaticBusiness Policy and Regulations
-            </p>
-            <p class="p-2 text-base font-thin  text-text-default basis-1/2 md:basis-1/4">
-                Bacteriology
-            </p>
-            <p class="p-2 text-base font-thin  text-text-default basis-1/2 md:basis-1/4">
-                Business Demography and Environmental Studies
-            </p>
-            <p class="p-2 text-base font-thin  text-text-default basis-1/2 md:basis-1/4">
-                Bacteriology
-            </p>
-            <p class="p-2 text-base font-thin  text-text-default basis-1/2 md:basis-1/4">
-                Business Demography and Environmental Studies
-            </p>
-            <p class="p-2 text-base font-thin  text-text-default basis-1/2 md:basis-1/4">
-                Business Research Methods for Managers
-            </p>
-            <p class="p-2 text-base font-thin  text-text-default basis-1/2 md:basis-1/4">
-                Business InformaticBusiness Policy and Regulations
-            </p>
-            <p class="p-2 text-base font-thin  text-text-default basis-1/2 md:basis-1/4">
-                Bacteriology
-            </p>
-            <p class="p-2 text-base font-thin  text-text-default basis-1/2 md:basis-1/4">
-                Business Demography and Environmental Studies
-            </p>
-            <p class="p-2 text-base font-thin  text-text-default basis-1/2 md:basis-1/4">
-                Bacteriology
-            </p>
-            <p class="p-2 text-base font-thin  text-text-default basis-1/2 md:basis-1/4">
-                Business Demography and Environmental Studies
-            </p>
-            <p class="p-2 text-base font-thin  text-text-default basis-1/2 md:basis-1/4">
-                Business Research Methods for Managers
-            </p>
-            <p class="p-2 text-base font-thin  text-text-default basis-1/2 md:basis-1/4">
-                Business InformaticBusiness Policy and Regulations
-            </p>
-            <p class="p-2 text-base font-thin  text-text-default basis-1/2 md:basis-1/4">
-                Bacteriology
-            </p>
-            <p class="p-2 text-base font-thin  text-text-default basis-1/2 md:basis-1/4">
-                Business Demography and Environmental Studies
-            </p>
-            <p class="p-2 text-base font-thin  text-text-default basis-1/2 md:basis-1/4">
-                Bacteriology
-            </p>
-            <p class="p-2 text-base font-thin  text-text-default basis-1/2 md:basis-1/4">
-                Business Demography and Environmental Studies
-            </p>
-            <p class="p-2 text-base font-thin  text-text-default basis-1/2 md:basis-1/4">
-                Business Research Methods for Managers
-            </p>
-            <p class="p-2 text-base font-thin  text-text-default basis-1/2 md:basis-1/4">
-                Business InformaticBusiness Policy and Regulations
-            </p>
-            <p class="p-2 text-base font-thin  text-text-default basis-1/2 md:basis-1/4">
-                Bacteriology
-            </p>
-            <p class="p-2 text-base font-thin  text-text-default basis-1/2 md:basis-1/4">
-                Business Demography and Environmental Studies
-            </p>
-            <p class="p-2 text-base font-thin  text-text-default basis-1/2 md:basis-1/4">
-                Bacteriology
-            </p>
-            <p class="p-2 text-base font-thin  text-text-default basis-1/2 md:basis-1/4">
-                Business Demography and Environmental Studies
-            </p>
+            <div class="py-6 px-4 md:px-7 flex flex-wrap ">
+                <p class="p-2 text-base font-thin  text-text-default basis-1/2 md:basis-1/4	">
+                    Bacteriology
+                </p>
+                <p class="p-2 text-base font-thin  text-text-default basis-1/2 md:basis-1/4">
+                    Ballistic and Cruise Missile Technology
+                </p>
+                <p class="p-2 text-base font-thin  text-text-default basis-1/2 md:basis-1/4">
+                    Band and choir
+                </p>
+                <p class="p-2 text-base font-thin  text-text-default basis-1/2 md:basis-1/4">
+                    Banking and Finance
+                </p>
+                <p class="p-2 text-base font-thin  text-text-default basis-1/2 md:basis-1/4">
+                    Bacteriology
+                </p>
+                <p class="p-2 text-base font-thin  text-text-default basis-1/2 md:basis-1/4">
+                    Business Research Methods for Managers
+                </p>
+                <p class="p-2 text-base font-thin  text-text-default basis-1/2 md:basis-1/4">
+                    Business InformaticBusiness Policy and Regulations
+                </p>
+                <p class="p-2 text-base font-thin  text-text-default basis-1/2 md:basis-1/4">
+                    Bacteriology
+                </p>
+                <p class="p-2 text-base font-thin  text-text-default basis-1/2 md:basis-1/4">
+                    Business Demography and Environmental Studies
+                </p>
+                <p class="p-2 text-base font-thin  text-text-default basis-1/2 md:basis-1/4">
+                    Bacteriology
+                </p>
+                <p class="p-2 text-base font-thin  text-text-default basis-1/2 md:basis-1/4">
+                    Business Demography and Environmental Studies
+                </p>
+                <p class="p-2 text-base font-thin  text-text-default basis-1/2 md:basis-1/4">
+                    Business Research Methods for Managers
+                </p>
+                <p class="p-2 text-base font-thin  text-text-default basis-1/2 md:basis-1/4">
+                    Business InformaticBusiness Policy and Regulations
+                </p>
+                <p class="p-2 text-base font-thin  text-text-default basis-1/2 md:basis-1/4">
+                    Bacteriology
+                </p>
+                <p class="p-2 text-base font-thin  text-text-default basis-1/2 md:basis-1/4">
+                    Business Demography and Environmental Studies
+                </p>
+                <p class="p-2 text-base font-thin  text-text-default basis-1/2 md:basis-1/4">
+                    Bacteriology
+                </p>
+                <p class="p-2 text-base font-thin  text-text-default basis-1/2 md:basis-1/4">
+                    Business Demography and Environmental Studies
+                </p>
+                <p class="p-2 text-base font-thin  text-text-default basis-1/2 md:basis-1/4">
+                    Business Research Methods for Managers
+                </p>
+                <p class="p-2 text-base font-thin  text-text-default basis-1/2 md:basis-1/4">
+                    Business InformaticBusiness Policy and Regulations
+                </p>
+                <p class="p-2 text-base font-thin  text-text-default basis-1/2 md:basis-1/4">
+                    Bacteriology
+                </p>
+                <p class="p-2 text-base font-thin  text-text-default basis-1/2 md:basis-1/4">
+                    Business Demography and Environmental Studies
+                </p>
+                <p class="p-2 text-base font-thin  text-text-default basis-1/2 md:basis-1/4">
+                    Bacteriology
+                </p>
+                <p class="p-2 text-base font-thin  text-text-default basis-1/2 md:basis-1/4">
+                    Business Demography and Environmental Studies
+                </p>
+                <p class="p-2 text-base font-thin  text-text-default basis-1/2 md:basis-1/4">
+                    Business Research Methods for Managers
+                </p>
+                <p class="p-2 text-base font-thin  text-text-default basis-1/2 md:basis-1/4">
+                    Business InformaticBusiness Policy and Regulations
+                </p>
+                <p class="p-2 text-base font-thin  text-text-default basis-1/2 md:basis-1/4">
+                    Bacteriology
+                </p>
+                <p class="p-2 text-base font-thin  text-text-default basis-1/2 md:basis-1/4">
+                    Business Demography and Environmental Studies
+                </p>
+                <p class="p-2 text-base font-thin  text-text-default basis-1/2 md:basis-1/4">
+                    Bacteriology
+                </p>
+                <p class="p-2 text-base font-thin  text-text-default basis-1/2 md:basis-1/4">
+                    Business Demography and Environmental Studies
+                </p>
 
+            </div>
         </div>
+
 
     </div>
 </main>
-<footer class="border-t border-solid mb-4">
-    <div class="mt-6 mb-2 mx-auto w-11/12">
+<footer class=" border-t border-solid mb-4">
+    <div class=" container mt-6 mb-2 mx-auto w-11/12">
         <div class="flex flex-wrap">
             <div class="basis-full mb-8 md:basis-1/5">
                 <img class="mx-auto md:mx-0 w-[104px] object-cover" src="./src/assets/images/logo.png" alt="">
@@ -1136,17 +1137,20 @@ let pre_scroll = document.documentElement.scrollTop;
 let header_element = document.getElementById('header');
 
     window.onscroll = function() {scrollFunction()};
-    function scrollFunction() {
+
+
+    function scrollFunction()
+    {
         let scroll_top =document.body.scrollTop || document.documentElement.scrollTop;
 
         if (scroll_top > 20) {
             if(pre_scroll < scroll_top)
             {
-                pre_scroll = scroll_top;
+                pre_scroll = document.documentElement.scrollTop;
                 header_element.classList.add('invisible');
             }
             else{
-                pre_scroll = scroll_top;
+                pre_scroll = document.documentElement.scrollTop;
                 header_element.classList.remove('invisible');
 
             }
@@ -1155,6 +1159,7 @@ let header_element = document.getElementById('header');
             backToTop.style.display = "none";
         }
     }
+
     function topFunction() {
         document.body.scrollTop = 0; // For Safari
         document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
@@ -1162,7 +1167,6 @@ let header_element = document.getElementById('header');
 
     let search_global = document.getElementById('search_global');
     search_global.addEventListener('focus', function (e) {
-          console.log(e.target.parentElement.closest('.container_search'));
 
         e.target.parentElement.closest('.container_search').classList.add('border-primary');
         e.target.parentElement.closest('.container_search').classList.remove('border-slate-300');
