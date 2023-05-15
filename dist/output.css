@@ -1174,6 +1174,14 @@ html {
   color: rgb(102 102 102 / var(--tw-text-opacity));
 }
 
+.hover\:cursor-auto:hover {
+  cursor: auto;
+}
+
+.hover\:cursor-pointer:hover {
+  cursor: pointer;
+}
+
 .hover\:border-primary:hover {
   border-color: var(--color-primary);
 }
