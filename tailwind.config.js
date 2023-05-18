@@ -11,15 +11,14 @@ module.exports = {
       colors:{
         primary: 'var(--color-primary)',
         secondary:'var(--color-secondary)',
+        "primary-lighter":'rgba(var(--color-primary-lighter),  <alpha-value>)',
         "text-default": '#666666',
         "search": '#CBCCCC',
         "text-default-darker":"#333333",
-
-
-
       },
-      border:{
+      borderWidth:{
         '1.5':'1.5px',
+        '3': '3px',
       },
       boxShadow: {
         '3xl': '0px 5px 5px -5px rgba(0, 0, 0, 0.25)',
@@ -42,6 +41,7 @@ module.exports = {
     },
   },
   plugins: [
+    require("tailwind-scrollbar")({ nocompatible: true }),
   ],
 }
 
