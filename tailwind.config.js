@@ -20,6 +20,10 @@ module.exports = {
         '1.5':'1.5px',
         '3': '3px',
       },
+      textDecorationThickness:{
+        '3':'3px',
+      },
+
       boxShadow: {
         '3xl': '0px 5px 5px -5px rgba(0, 0, 0, 0.25)',
         'hover':"6px 8px 5px #cccccc",
