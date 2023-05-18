@@ -779,6 +779,14 @@ html {
   height: 100vh;
 }
 
+.h-5 {
+  height: 1.25rem;
+}
+
+.h-4 {
+  height: 1rem;
+}
+
 .max-h-8 {
   max-height: 2rem;
 }
@@ -833,6 +841,10 @@ html {
 
 .w-full {
   width: 100%;
+}
+
+.w-4 {
+  width: 1rem;
 }
 
 .min-w-fit {
@@ -1628,6 +1640,22 @@ html {
     height: auto;
   }
 
+  .md\:h-4 {
+    height: 1rem;
+  }
+
+  .md\:h-6 {
+    height: 1.5rem;
+  }
+
+  .md\:h-3 {
+    height: 0.75rem;
+  }
+
+  .md\:h-3\.5 {
+    height: 0.875rem;
+  }
+
   .md\:max-h-\[75vh\] {
     max-height: 75vh;
   }
@@ -1642,6 +1670,26 @@ html {
 
   .md\:w-auto {
     width: auto;
+  }
+
+  .md\:w-3 {
+    width: 0.75rem;
+  }
+
+  .md\:w-4 {
+    width: 1rem;
+  }
+
+  .md\:w-3\.5 {
+    width: 0.875rem;
+  }
+
+  .md\:w-2 {
+    width: 0.5rem;
+  }
+
+  .md\:w-2\.5 {
+    width: 0.625rem;
   }
 
   .md\:min-w-\[550px\] {
