@@ -1575,6 +1575,10 @@
         </div>
     </div>
 </div>
+
+<button @click="$refs.text.remove()">Remove Text</button>
+<span x-ref="text">Hello world</span>
+<span x-ref="text">Hello 👋</span>
 <script>
     document.addEventListener('alpine:init', ()=>{
         Alpine.data('searchs', ()=>({
