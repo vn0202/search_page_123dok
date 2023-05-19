@@ -13,11 +13,10 @@
     <title>Document</title>
     <style>
         [x-cloak] { display: none !important; }
-
     </style>
 </head>
-<body x-data="{open_modal:false}">
-<header x-data="searchs" id="header" class=" px-4 lg:px-0 shadow-3xl fixed top-0 left-0 z-50 right-0 bg-white">
+<body x-data="{open_modal:false}" class="overflow-y-auto scrollbar-thin scrollbar-thumb-rounded-lg scrollbar-thumb-gray-200 hover:scrollbar-thumb-gray-700" :class="open_modal && 'overflow-hidden'" >
+<header x-data="searchs" id="header"  class=" px-4 lg:px-0 shadow-3xl fixed top-0 left-0 z-50 right-0 bg-white">
     <div class="container mx-auto flex items-center  justify-between md:py-4">
         <div class="logo flex py-4 gap-4 items-center justify-between md:justify-start  ">
             <svg @click="open_modal = !open_modal" id="menu_icon" class="w-12 h-12 hover:cursor-pointer" viewBox="0 0 48 48" fill="none"
@@ -260,11 +259,12 @@
     </div>
 
 </header>
-<main class="mt-24 md:mt-20 md:pt-8 ">
+
+<main class="mt-24 md:mt-20 md:pt-8  overflow-y-auto scrollbar-thin scrollbar-thumb-rounded-lg scrollbar-thumb-gray-200 hover:scrollbar-thumb-gray-700">
     <div x-data="searchs" class="container w-full mx-auto ">
         <div class="  my-5 px-4 lg:px-0 flex flex-col gap-3 md:gap-8 md:flex-row justify-between">
-            <div class="filter_by_school w-full md:w-2/5">
-                <div class="p-2 flex gap-2 items-center md:mb-4">
+            <div class=" w-full md:w-2/5">
+                <label for="filter-by-school" class="p-2 flex gap-2 items-center md:mb-4">
                     <svg width="24" height="20" viewBox="0 0 24 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd" clip-rule="evenodd"
                               d="M1.5 0.5C0.947715 0.5 0.5 0.947715 0.5 1.5V15.3333C0.5 15.8856 0.947716 16.3333 1.5 16.3333H8.2C9.07521 16.3333 9.91458 16.667 10.5335 17.2608C11.1523 17.8547 11.5 18.6601 11.5 19.5V4.72222C11.5 3.60242 11.0364 2.52848 10.2113 1.73666C9.38611 0.94484 8.26695 0.5 7.1 0.5H1.5ZM22.5 0.5C23.0523 0.5 23.5 0.947715 23.5 1.5V15.3333C23.5 15.8856 23.0523 16.3333 22.5 16.3333H15.8C14.9248 16.3333 14.0854 16.667 13.4665 17.2608C12.8477 17.8547 12.5 18.6601 12.5 19.5V4.72222C12.5 3.60242 12.9636 2.52848 13.7887 1.73666C14.6139 0.94484 15.733 0.5 16.9 0.5H22.5Z"
@@ -272,15 +272,15 @@
                     </svg>
 
                     <span class="text-lg md:text-xl text-text-default-darker">School filter</span>
-                </div>
-                <input
+                </label>
+                <input id="filter-by-school"
                         class="w-full rounded-3xl px-4 py-2 md:py-3 border border-soild border-slate-300 placeholder:text-base placeholder:font-medium placeholder:text-search outline-none  focus:border-primary hover:border-primary"
                         type="search" placeholder="Search for your school">
 
 
             </div>
-            <div class="filter_by_school w-full md:w-2/5">
-                <div class="p-2 flex gap-2 items-center md:mb-4">
+            <div class=" w-full md:w-2/5">
+                <label for="filter-by-writer" class="p-2 flex gap-2 items-center md:mb-4">
                     <svg width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd" clip-rule="evenodd"
                               d="M13.5 5C13.5 7.48528 11.4853 9.5 9 9.5C6.51472 9.5 4.5 7.48528 4.5 5C4.5 2.51472 6.51472 0.5 9 0.5C11.4853 0.5 13.5 2.51472 13.5 5ZM18 16.1667V18.5H0V16.1667C0 14.929 0.474106 13.742 1.31802 12.8668C2.16193 11.9917 3.30653 11.5 4.5 11.5H13.5C14.6935 11.5 15.8381 11.9917 16.682 12.8668C17.5259 13.742 18 14.929 18 16.1667Z"
@@ -288,8 +288,8 @@
                     </svg>
 
                     <span class="text-lg md:text-xl text-text-default-darker">Writer's name</span>
-                </div>
-                <input
+                </label>
+                <input id="filter-by-writer"
                         class="w-full rounded-3xl px-4 py-2 md:py-3 border border-soild border-slate-300 placeholder:text-base placeholder:font-medium placeholder:text-search outline-none  focus:border-primary hover:border-primary"
                         type="search" placeholder="Search for writer's name">
             </div>
@@ -1050,31 +1050,45 @@
             </ul>
         </div>
     </div>
-    <div class=" max-4xl xl:max-w-5xl mx-auto paginator  mt-8  mb-10 flex items-center justify-center">
+    <div class=" max-4xl xl:max-w-5xl mx-auto paginator  mt-8  mb-10 flex gap-4 items-center justify-center">
         <a href="" class="inline-flex items-center gap-4 p-2 ">
             <svg width="9" height="14" viewBox="0 0 9 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M8 1L2 7L8 13" stroke="#AFAFAF" stroke-width="2"/>
             </svg>
             <span class="hidden md:inline-block text-text-default">Previous</span>
         </a>
-        <a href="?page=1"
-           class="paginator_item-1 bg-primary text-white inline-flex items-center px-3 aspect-square rounded-full  text-base ">1</a>
-        <a href="?page=2"
-           class="paginator_item-2 text-primary inline-flex items-center rounded-full text-base px-3 hover:text-white hover:bg-primary aspect-square">2</a>
-        <a href="?page=3"
-           class="paginator_item-3 text-primary inline-flex items-center aspect-square rounded-full text-base px-3 hover:text-white hover:bg-primary ">3</a>
-        <a href="?page=4"
-           class="paginator_item-4 text-primary inline-flex items-center aspect-square rounded-full text-base px-3 hover:text-white hover:bg-primary ">4</a>
-        <a href="?page=5"
-           class="paginator_item-5 text-primary inline-flex items-center aspect-square rounded-full text-base px-3 hover:text-white hover:bg-primary ">5</a>
-        <a href="?page=6"
-           class="paginator_item-6 text-primary inline-flex items-center aspect-square rounded-full text-base px-3 hover:text-white hover:bg-primary ">6</a>
-        <a href="?page=7"
-           class="paginator_item-7 text-primary inline-flex items-center aspect-square rounded-full text-base px-3 hover:text-white hover:bg-primary ">7</a>
-        <a href="?page=8"
-           class="paginator_item-8 text-primary inline-flex items-center aspect-square rounded-full text-base px-3 hover:text-white hover:bg-primary ">8</a>
-        <a href="?page=9"
-           class="paginator_item-9 text-primary inline-flex items-center aspect-square rounded-full text-base px-3 hover:text-white hover:bg-primary ">9</a>
+        <a href=""
+           class="paginator_item-2 inline-flex text-white bg-primary  items-center rounded-full text-base w-8 h-8 ">
+            <span class="grow text-center">1</span>
+        </a>
+        <a href=""
+           class="paginator_item-2 inline-flex text-primary hover:bg-primary hover:text-white  items-center rounded-full text-base w-8 h-8 ">
+            <span class="grow text-center">2</span>
+        </a> <a href=""
+                class="paginator_item-2 inline-flex text-primary hover:bg-primary hover:text-white  items-center rounded-full text-base w-8 h-8 ">
+        <span class="grow text-center">3</span>
+    </a> <a href=""
+            class="paginator_item-2 inline-flex text-primary hover:bg-primary hover:text-white  items-center rounded-full text-base w-8 h-8 ">
+        <span class="grow text-center">4</span>
+    </a> <a href=""
+            class="paginator_item-2 inline-flex text-primary hover:bg-primary hover:text-white  items-center rounded-full text-base w-8 h-8 ">
+        <span class="grow text-center">5</span>
+    </a> <a href=""
+            class="paginator_item-2 inline-flex text-primary hover:bg-primary hover:text-white  items-center rounded-full text-base w-8 h-8 ">
+        <span class="grow text-center">6</span>
+    </a> <a href=""
+            class="paginator_item-2 inline-flex text-primary hover:bg-primary hover:text-white  items-center rounded-full text-base w-8 h-8 ">
+        <span class="grow text-center">7</span>
+    </a>
+        <a href=""
+            class="paginator_item-2 inline-flex text-primary hover:bg-primary hover:text-white  items-center rounded-full text-base w-8 h-8 ">
+        <span class="grow text-center">8</span>
+    </a>
+        <a href=""
+           class="paginator_item-2 inline-flex text-primary hover:bg-primary hover:text-white  items-center rounded-full text-base w-8 h-8 ">
+            <span class="grow text-center">9</span>
+        </a>
+
         <a href="" class="inline-flex items-center gap-4 p-2 ">
             <span class="hidden md:inline-block text-primary">Next</span>
             <svg width="9" height="14" viewBox="0 0 9 14" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1090,151 +1104,7 @@
             Upload more documents and download any material studies right away!
         </h2>
     </div>
-    <div class="mt-10 mb-8  container  md:mx-auto   px-4	">
-        <div class="border border-solid rounded-xl">
-            <div class="px-4 md:px-28 flex flex-col md:flex-row items-center gap-5 mt-8 mb-12">
-                <span class="text-base font-semibold min-w-fit">Search documents by subject</span>
-                <div class="grow relative w-full ">
-                    <input
-                            class="border border-solid border-slate-300 w-full focus:outline-none rounded-4xl p-4  placeholder:font-thin placeholder:text-text-default focus:border-primary hover:border-primary"
-                            type="search" name="search" placeholder="Type a subject">
-                    <svg class="absolute top-1/2 -translate-y-2/4 right-7	" width="20" height="20"
-                         viewBox="0 0 20 20"
-                         fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd" clip-rule="evenodd"
-                              d="M2 9C2 5.13401 5.13401 2 9 2C12.866 2 16 5.13401 16 9C16 10.886 15.2541 12.5978 14.0412 13.8566C14.0071 13.8828 13.9742 13.9116 13.9429 13.9429C13.9116 13.9742 13.8828 14.0071 13.8566 14.0412C12.5978 15.2541 10.886 16 9 16C5.13401 16 2 12.866 2 9ZM14.6177 16.0319C13.078 17.2635 11.125 18 9 18C4.02944 18 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9C18 11.125 17.2635 13.078 16.0319 14.6177L19.7071 18.2929C20.0977 18.6834 20.0977 19.3166 19.7071 19.7071C19.3166 20.0977 18.6834 20.0977 18.2929 19.7071L14.6177 16.0319Z"
-                              fill="#99999A"/>
-                    </svg>
-                </div>
-            </div>
-            <div class="px-4 md:px-5 ">
-                <div class="flex items-center mb-2 flex-wrap justify-between">
-                    <a href=""
-                       class="px-2.5 aspect-square  inline-flex items-center text-base font-medium text-primary self-center	">A</a>
-                    <a href=""
-                       class="px-2.5  aspect-square inline-flex items-center  text-base font-medium text-primary rounded-full bg-primary text-white">B</a>
-                    <a href="" class="hover:cursor-pointer hover:bg-primary hover:text-white rounded-full  px-2.5 aspect-square inline-flex items-center text-base font-medium text-primary">C</a>
-                    <a href="" class="hover:cursor-pointer hover:bg-primary hover:text-white rounded-full  px-2.5 aspect-square inline-flex items-center text-base font-medium text-primary">D</a>
-                    <a href="" class="hover:cursor-pointer hover:bg-primary hover:text-white rounded-full  px-2.5 aspect-square inline-flex items-center text-base font-medium text-primary">E</a>
-                    <a href="" class="hover:cursor-pointer hover:bg-primary hover:text-white rounded-full  px-2.5 aspect-square inline-flex items-center text-base font-medium text-primary">F</a>
-                    <a href="" class="hover:cursor-pointer hover:bg-primary hover:text-white rounded-full  px-2.5 aspect-square inline-flex items-center text-base font-medium text-primary">G</a>
-                    <a href="" class="hover:cursor-pointer hover:bg-primary hover:text-white rounded-full  px-2.5 aspect-square inline-flex items-center text-base font-medium text-primary">H</a>
-                    <a href="" class="hover:cursor-pointer hover:bg-primary hover:text-white rounded-full  px-2.5 aspect-square inline-flex items-center text-base font-medium text-primary">I</a>
-                    <a href="" class="hover:cursor-pointer hover:bg-primary hover:text-white rounded-full  px-2.5 aspect-square inline-flex items-center text-base font-medium text-primary">J</a>
-                    <a href="" class="hover:cursor-pointer hover:bg-primary hover:text-white rounded-full  px-2.5 aspect-square inline-flex items-center text-base font-medium text-primary">K</a>
-                    <a href="" class="hover:cursor-pointer hover:bg-primary hover:text-white rounded-full  px-2.5 aspect-square inline-flex items-center text-base font-medium text-primary">L</a>
-                    <a href="" class="hover:cursor-pointer hover:bg-primary hover:text-white rounded-full  px-2.5 aspect-square inline-flex items-center text-base font-medium text-primary">M</a>
-                    <a href="" class="hover:cursor-pointer hover:bg-primary hover:text-white rounded-full  px-2.5 aspect-square inline-flex items-center text-base font-medium text-primary">N</a>
-                    <a href="" class="hover:cursor-pointer hover:bg-primary hover:text-white rounded-full  px-2.5 aspect-square inline-flex items-center text-base font-medium text-primary">O</a>
-                    <a href="" class="hover:cursor-pointer hover:bg-primary hover:text-white rounded-full  px-2.5 aspect-square inline-flex items-center text-base font-medium text-primary">P</a>
-                    <a href="" class="hover:cursor-pointer hover:bg-primary hover:text-white rounded-full  px-2.5 aspect-square inline-flex items-center text-base font-medium text-primary">Q</a>
-                    <a href="" class="hover:cursor-pointer hover:bg-primary hover:text-white rounded-full  px-2.5 aspect-square inline-flex items-center text-base font-medium text-primary">R</a>
-                    <a href="" class="hover:cursor-pointer hover:bg-primary hover:text-white rounded-full  px-2.5 aspect-square inline-flex items-center text-base font-medium text-primary">S</a>
-                    <a href="" class="hover:cursor-pointer hover:bg-primary hover:text-white rounded-full  px-2.5 aspect-square inline-flex items-center text-base font-medium text-primary">T</a>
-                    <a href="" class="hover:cursor-pointer hover:bg-primary hover:text-white rounded-full  px-2.5 aspect-square inline-flex items-center text-base font-medium text-primary">U</a>
-                    <a href="" class="hover:cursor-pointer hover:bg-primary hover:text-white rounded-full  px-2.5 aspect-square inline-flex items-center text-base font-medium text-primary">V</a>
-                    <a href="" class="hover:cursor-pointer hover:bg-primary hover:text-white rounded-full  px-2.5 aspect-square inline-flex items-center text-base font-medium text-primary">W</a>
-                    <a href="" class="hover:cursor-pointer hover:bg-primary hover:text-white rounded-full  px-2.5 aspect-square inline-flex items-center text-base font-medium text-primary">Y</a>
-                    <a href="" class="hover:cursor-pointer hover:bg-primary hover:text-white rounded-full  px-2.5 aspect-square inline-flex items-center text-base font-medium text-primary">Z</a>
-                </div>
-                <hr>
-            </div>
-            <div class="py-6 px-4 md:px-7 flex flex-wrap ">
-                <a href="#" class="p-2 text-base font-thin  text-text-default basis-1/2 md:basis-1/4 hover:bg-primary-lighter hover:text-white rounded 	">
-                    Bacteriology
-                </a>
-                <a href="#" class="p-2 text-base font-thin  text-text-default basis-1/2 md:basis-1/4 hover:bg-primary-lighter hover:text-white rounded">
-                    Ballistic and Cruise Missile Technology
-                </a>
-                <a href="#" class="p-2 text-base font-thin  text-text-default basis-1/2 md:basis-1/4 hover:bg-primary-lighter hover:text-white rounded">
-                    Band and choir
-                </a>
-                <a href="#" class="p-2 text-base font-thin  text-text-default basis-1/2 md:basis-1/4 hover:bg-primary-lighter hover:text-white rounded">
-                    Banking and Finance
-                </a>
-                <a href="#" class="p-2 text-base font-thin  text-text-default basis-1/2 md:basis-1/4 hover:bg-primary-lighter hover:text-white rounded">
-                    Bacteriology
-                </a>
-                <a href="#" class="p-2 text-base font-thin  text-text-default basis-1/2 md:basis-1/4 hover:bg-primary-lighter hover:text-white rounded">
-                    Business Research Methods for Managers
-                </a>
-                <a href="#" class="p-2 text-base font-thin  text-text-default basis-1/2 md:basis-1/4 hover:bg-primary-lighter hover:text-white rounded">
-                    Business InformaticBusiness Policy and Regulations
-                </a>
 
-                    <a href="#" class="p-2 text-base font-thin  text-text-default basis-1/2 md:basis-1/4 hover:bg-primary-lighter hover:text-white rounded">
-                        Bacteriology
-                    </a>
-
-                <a href="#" class="p-2 text-base font-thin  text-text-default basis-1/2 md:basis-1/4 hover:bg-primary-lighter hover:text-white rounded">
-                    Business Demography and Environmental Studies
-                </a>
-                <a href="#" class="p-2 text-base font-thin  text-text-default basis-1/2 md:basis-1/4 hover:bg-primary-lighter hover:text-white rounded">
-                    Bacteriology
-                </a>
-                <a href="#" class="p-2 text-base font-thin  text-text-default basis-1/2 md:basis-1/4 hover:bg-primary-lighter hover:text-white rounded">
-                    Business Demography and Environmental Studies
-                </a>
-                <a href="#" class="p-2 text-base font-thin  text-text-default basis-1/2 md:basis-1/4 hover:bg-primary-lighter hover:text-white rounded">
-                    Business Research Methods for Managers
-                </a>
-                <a href="#" class="p-2 text-base font-thin  text-text-default basis-1/2 md:basis-1/4 hover:bg-primary-lighter hover:text-white rounded">
-                    Business InformaticBusiness Policy and Regulations
-                </a>
-                <a href="#" class="p-2 text-base font-thin  text-text-default basis-1/2 md:basis-1/4 hover:bg-primary-lighter hover:text-white rounded">
-                    Bacteriology
-                </a>
-                <a href="#" class="p-2 text-base font-thin  text-text-default basis-1/2 md:basis-1/4 hover:bg-primary-lighter hover:text-white rounded">
-                    Business Demography and Environmental Studies
-                </a>
-                <a href="#" class="p-2 text-base font-thin  text-text-default basis-1/2 md:basis-1/4 hover:bg-primary-lighter hover:text-white rounded">
-                    Bacteriology
-                </a>
-                <a href="#" class="p-2 text-base font-thin  text-text-default basis-1/2 md:basis-1/4 hover:bg-primary-lighter hover:text-white rounded">
-                    Business Demography and Environmental Studies
-                </a>
-                <a href="#" class="p-2 text-base font-thin  text-text-default basis-1/2 md:basis-1/4 hover:bg-primary-lighter hover:text-white rounded">
-                    Business Research Methods for Managers
-                </a>
-                <a href="#" class="p-2 text-base font-thin  text-text-default basis-1/2 md:basis-1/4 hover:bg-primary-lighter hover:text-white rounded">
-                    Business InformaticBusiness Policy and Regulations
-                </a>
-                <a href="#" class="p-2 text-base font-thin  text-text-default basis-1/2 md:basis-1/4 hover:bg-primary-lighter hover:text-white rounded">
-                    Bacteriology
-                </a>
-                <a href="#" class="p-2 text-base font-thin  text-text-default basis-1/2 md:basis-1/4 hover:bg-primary-lighter hover:text-white rounded">
-                    Business Demography and Environmental Studies
-                </a>
-                <a href="#" class="p-2 text-base font-thin  text-text-default basis-1/2 md:basis-1/4 hover:bg-primary-lighter hover:text-white rounded">
-                    Bacteriology
-                </a>
-                <a href="#" class="p-2 text-base font-thin  text-text-default basis-1/2 md:basis-1/4 hover:bg-primary-lighter hover:text-white rounded">
-                    Business Demography and Environmental Studies
-                </a>
-                <a href="#" class="p-2 text-base font-thin  text-text-default basis-1/2 md:basis-1/4 hover:bg-primary-lighter hover:text-white rounded">
-                    Business Research Methods for Managers
-                </a>
-                <a href="#" class="p-2 text-base font-thin  text-text-default basis-1/2 md:basis-1/4 hover:bg-primary-lighter hover:text-white rounded">
-                    Business InformaticBusiness Policy and Regulations
-                </a>
-                <a href="#" class="p-2 text-base font-thin  text-text-default basis-1/2 md:basis-1/4 hover:bg-primary-lighter hover:text-white rounded">
-                    Bacteriology
-                </a>
-                <a href="#" class="p-2 text-base font-thin  text-text-default basis-1/2 md:basis-1/4 hover:bg-primary-lighter hover:text-white rounded">
-                    Business Demography and Environmental Studies
-                </a>
-                <a href="#" class="p-2 text-base font-thin  text-text-default basis-1/2 md:basis-1/4 hover:bg-primary-lighter hover:text-white rounded">
-                    Bacteriology
-                </a>
-                <a href="#" class="p-2 text-base font-thin  text-text-default basis-1/2 md:basis-1/4 hover:bg-primary-lighter hover:text-white rounded">
-                    Business Demography and Environmental Studies
-                </a>
-
-            </div>
-        </div>
-
-
-    </div>
 </main>
 <footer class=" border-t border-solid mb-4">
     <div class=" container mt-6 mb-2 mx-auto w-11/12">
@@ -1312,17 +1182,18 @@
     </div>
 
 </footer>
-<p x-cloak x-show="isShowBackToTop" class="fixed bottom-10 right-6" @click="backToTop">
+
+<p x-cloak x-show="isShowBackToTop" class="fixed bottom-10 right-6 cursor-pointer" @click="backToTop">
     <svg width="36px" height="36px" viewBox="0 0 256 256" xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
     <path d="M128 203.313c-3.534 0-6-2.865-6-6.4V74.878l-45.956 47.141c-2.463 2.538-6.616 2.597-9.149.138-1.295-1.256-1.995-2.925-1.995-4.594 0-1.606.576-3.216 1.782-4.456l56.737-58.466a6.387 6.387 0 0 1 9.178 0l56.743 58.466c2.459 2.528 2.401 6.584-.139 9.05-2.534 2.459-6.789 2.4-9.251-.138L134 74.878v122.034c0 3.535-2.466 6.401-6 6.401zM128 256c70.578 0 128-57.422 128-128S198.578 0 128 0 0 57.422 0 128s57.422 128 128 128zm0-12.8c-63.521 0-115.2-51.679-115.2-115.2S64.479 12.8 128 12.8 243.2 64.479 243.2 128 191.521 243.2 128 243.2z"
           fill="#ffaa00" class="fill-000000">
     </path>
   </svg>
 </p>
-<div id="modal_menu" x-cloak x-show="open_modal" class=" fixed z-50 top-0 h-screen  w-full bg-[#AFAFAF] bg-opacity-50">
+<div id="modal_menu" x-cloak x-show="open_modal" class=" fixed z-50 top-0 h-screen  w-full bg-[#AFAFAF] bg-opacity-50 overflow-hidden ">
     <div id="modal_menu_content" x-show="open_modal"  @click.outside="open_modal = false" x-transition:enter="-translate-x-full ease-out duration-100"
          x-transition:leave="-translate-x-full ease-in duration-100"
-         class=" flex flex-col bg-white h-full  px-6 py-8 md:p-10 max-w-max max-w-md  transition-all duration-200 ease-in-out  ">
+         class=" flex flex-col bg-white h-full  px-6 py-8 md:p-10  max-w-md  transition-all duration-200 ease-in-out  ">
         <div class="flex gap-4 mb-8 items-center justify-between">
             <div class="flex gap-4  items-center">
                 <svg @click="open_modal=false" id="modal_menu_icon" class="w-12 h-12" viewBox="0 0 48 48" fill="none"
@@ -1342,33 +1213,33 @@
                       stroke-linejoin="round"/>
             </svg>
         </div>
-        <div class="py-2.5 grow overflow-y-auto scrollbar-thin scrollbar-thumb-rounded-lg scrollbar-thumb-gray-200 hover:scrollbar-thumb-gray-700">
-            <div class="py-2.5">
+        <div class="py-2.5 pr-4  grow overflow-scroll scrollbar-thin scrollbar-thumb-rounded-lg scrollbar-thumb-gray-200 hover:scrollbar-thumb-gray-700">
+              <div class="py-2.5">
             <span
                     class="inline-flex  w-10 h-10 bg-[#5D789B] rounded-full  text-white text-base font-semibold items-center justify-center">
                 N
             </span>
-                <span class="text-base text-text-default ml-2">Phan Thi Minh Nguyet</span>
-            </div>
-            <div class="flex items-center gap-2 p-4 bg-primary-lighter rounded-xl active group mt-8 mb-6 ">
-                <svg class="fill-[#00A888] group-[.active]:fill-white" width="14" height="15" viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M5.66089 0.694775L1.26089 4.07194C0.718401 4.48831 0.400391 5.13328 0.400391 5.81714V13.2333C0.400391 13.8408 0.892877 14.3333 1.50039 14.3333H3.70039C4.3079 14.3333 4.80039 13.8408 4.80039 13.2333V10.3C4.80039 9.69248 5.29288 9.19999 5.90039 9.19999H8.10039C8.7079 9.19999 9.20039 9.69248 9.20039 10.3V13.2333C9.20039 13.8408 9.69288 14.3333 10.3004 14.3333H12.5004C13.1079 14.3333 13.6004 13.8408 13.6004 13.2333V5.81714C13.6004 5.13328 13.2824 4.48831 12.7399 4.07194L8.3399 0.694775C7.54984 0.0883765 6.45094 0.0883765 5.66089 0.694775Z"
-                          />
-                </svg>
-                <span class="text-primary font-medium text-base group-[.active]:text-white">Home</span>
-            </div>
-            <ul id="my_library" class="mt-4  flex flex-col gap-2">
-                <span class="font-medium"> My library </span>
-                <li class="" x-data="{open:false}">
-                    <div class="drop-down flex p-4 justify-between items-center gap-10 hover:bg-primary-lighter rounded-xl group hover:cursor-pointer peer" @click="open = !open">
-                        <div class="flex items-center gap-2 " >
-                            <svg class="w-4 h-5 md:w-3 md:h-4"  viewBox="0 0 12 16" fill="none"
-                                 xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" clip-rule="evenodd"
-                                      d="M7.5 0.666656H1.5C1.10218 0.666656 0.720644 0.82118 0.43934 1.09623C0.158035 1.37129 0 1.74434 0 2.13332V13.8667C0 14.2556 0.158035 14.6287 0.43934 14.9037C0.720644 15.1788 1.10218 15.3333 1.5 15.3333H10.5C10.8978 15.3333 11.2794 15.1788 11.5607 14.9037C11.842 14.6287 12 14.2556 12 13.8667V5.06666L7.5 0.666656ZM7.33333 1.99999V5.33332H10.6667L7.33333 1.99999ZM3.33333 5.12499C2.85008 5.12499 2.45833 5.51674 2.45833 5.99999C2.45833 6.48324 2.85008 6.87499 3.33333 6.87499H4.66667C5.14992 6.87499 5.54167 6.48324 5.54167 5.99999C5.54167 5.51674 5.14992 5.12499 4.66667 5.12499H3.33333ZM3.33333 7.79166C2.85008 7.79166 2.45833 8.18341 2.45833 8.66666C2.45833 9.14991 2.85008 9.54166 3.33333 9.54166H8.66667C9.14992 9.54166 9.54167 9.14991 9.54167 8.66666C9.54167 8.18341 9.14992 7.79166 8.66667 7.79166H3.33333ZM3.33333 10.4583C2.85008 10.4583 2.45833 10.8501 2.45833 11.3333C2.45833 11.8166 2.85008 12.2083 3.33333 12.2083H8.66667C9.14992 12.2083 9.54167 11.8166 9.54167 11.3333C9.54167 10.8501 9.14992 10.4583 8.66667 10.4583H3.33333Z"
-                                      fill="#00A888"/>
-                            </svg>
-                            <span  class="font-thin text-text-default group-hover:text-white group-[.active]:text-white">
+                  <span class="text-base text-text-default ml-2">Phan Thi Minh Nguyet</span>
+              </div>
+              <div class="flex items-center gap-2 p-4 bg-primary-lighter rounded-xl active group mt-8 mb-6 ">
+                  <svg class="fill-[#00A888] group-[.active]:fill-white" width="14" height="15" viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M5.66089 0.694775L1.26089 4.07194C0.718401 4.48831 0.400391 5.13328 0.400391 5.81714V13.2333C0.400391 13.8408 0.892877 14.3333 1.50039 14.3333H3.70039C4.3079 14.3333 4.80039 13.8408 4.80039 13.2333V10.3C4.80039 9.69248 5.29288 9.19999 5.90039 9.19999H8.10039C8.7079 9.19999 9.20039 9.69248 9.20039 10.3V13.2333C9.20039 13.8408 9.69288 14.3333 10.3004 14.3333H12.5004C13.1079 14.3333 13.6004 13.8408 13.6004 13.2333V5.81714C13.6004 5.13328 13.2824 4.48831 12.7399 4.07194L8.3399 0.694775C7.54984 0.0883765 6.45094 0.0883765 5.66089 0.694775Z"
+                      />
+                  </svg>
+                  <span class="text-primary font-medium text-base group-[.active]:text-white">Home</span>
+              </div>
+              <ul id="my_library" class="mt-4  flex flex-col gap-2 ">
+                  <span class="font-medium"> My library </span>
+                  <li class="" x-data="{open:false}">
+                      <div class="drop-down flex p-4 justify-between items-center gap-10 hover:bg-primary-lighter rounded-xl group hover:cursor-pointer peer" @click="open = !open">
+                          <div class="flex items-center gap-2 " >
+                              <svg class="w-4 h-5 md:w-3 md:h-4"  viewBox="0 0 12 16" fill="none"
+                                   xmlns="http://www.w3.org/2000/svg">
+                                  <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M7.5 0.666656H1.5C1.10218 0.666656 0.720644 0.82118 0.43934 1.09623C0.158035 1.37129 0 1.74434 0 2.13332V13.8667C0 14.2556 0.158035 14.6287 0.43934 14.9037C0.720644 15.1788 1.10218 15.3333 1.5 15.3333H10.5C10.8978 15.3333 11.2794 15.1788 11.5607 14.9037C11.842 14.6287 12 14.2556 12 13.8667V5.06666L7.5 0.666656ZM7.33333 1.99999V5.33332H10.6667L7.33333 1.99999ZM3.33333 5.12499C2.85008 5.12499 2.45833 5.51674 2.45833 5.99999C2.45833 6.48324 2.85008 6.87499 3.33333 6.87499H4.66667C5.14992 6.87499 5.54167 6.48324 5.54167 5.99999C5.54167 5.51674 5.14992 5.12499 4.66667 5.12499H3.33333ZM3.33333 7.79166C2.85008 7.79166 2.45833 8.18341 2.45833 8.66666C2.45833 9.14991 2.85008 9.54166 3.33333 9.54166H8.66667C9.14992 9.54166 9.54167 9.14991 9.54167 8.66666C9.54167 8.18341 9.14992 7.79166 8.66667 7.79166H3.33333ZM3.33333 10.4583C2.85008 10.4583 2.45833 10.8501 2.45833 11.3333C2.45833 11.8166 2.85008 12.2083 3.33333 12.2083H8.66667C9.14992 12.2083 9.54167 11.8166 9.54167 11.3333C9.54167 10.8501 9.14992 10.4583 8.66667 10.4583H3.33333Z"
+                                        fill="#00A888"/>
+                              </svg>
+                              <span  class="font-thin text-text-default group-hover:text-white group-[.active]:text-white">
                          Downloaded documents
                                </span>
                         </div>
@@ -1383,8 +1254,17 @@
                         </svg>
                     </div>
                     <ul x-cloak
-                        x-show="open"
-                        class=" flex flex-col gap-4 px-4 max-w-sm  py-2 ">
+                        x-show="open" @click.outside="open=false"
+                        class=" flex flex-col gap-4 px-4 max-w-sm  py-2  max-h-[30vh] overflow-scroll  scrollbar-thin scrollbar-thumb-rounded-lg scrollbar-thumb-gray-200 hover:scrollbar-thumb-gray-700">
+                        <li class="p-2 hover:bg-primary-lighter group">
+                            <span class="font-thin text-text-default group-hover:text-white">To build a fire - Jack London</span>
+                        </li>
+                        <li class="p-2 hover:bg-primary-lighter group">
+                            <span class="font-thin text-text-default group-hover:text-white">TED Talk - Lian Pin Koh - Conservation by drones</span>
+                        </li>
+                        <li class="p-2 hover:bg-primary-lighter group">
+                            <span class="font-thin text-text-default group-hover:text-white">ILS-L2-Transcripts - ILS-L2-Transcripts</span>
+                        </li>
                         <li class="p-2 hover:bg-primary-lighter group">
                             <span class="font-thin text-text-default group-hover:text-white">To build a fire - Jack London</span>
                         </li>
@@ -1401,172 +1281,172 @@
                             <span class="font-thin text-text-default group-hover:text-white"> CÂU HỎI ÔN TẬP MÔN TRIẾT - wwww</span>
                         </li>
 
-                    </ul>
+                      </ul>
 
-                </li>
-                <li class="" x-data="{open:false}">
-                    <div @click="open = !open" class="drop-down flex p-4 justify-between items-center gap-10 hover:bg-primary-lighter rounded-xl group hover:cursor-pointer peer">
-                        <div class="flex items-center gap-2 ">
-                            <svg class="w-4 h-5 md:w-3 md:h-4"  viewBox="0 0 12 16" fill="none"
-                                 xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" clip-rule="evenodd"
-                                      d="M2.33333 0.666687C1.71449 0.666687 1.121 0.91252 0.683417 1.3501C0.245833 1.78769 0 2.38118 0 3.00002V13C0 13.6189 0.245833 14.2124 0.683417 14.6499C1.121 15.0875 1.71449 15.3334 2.33333 15.3334H11.3333C11.7015 15.3334 12 15.0349 12 14.6667V1.33335C12 0.965164 11.7015 0.666687 11.3333 0.666687H2.33333ZM2.66667 11H11V14.3334H2.66667C1.74619 14.3334 1 13.5872 1 12.6667C1 11.7462 1.74619 11 2.66667 11Z"
-                                      fill="#00A888"/>
-                            </svg>
+                  </li>
+                  <li class="" x-data="{open:false}">
+                      <div @click="open = !open" class="drop-down flex p-4 justify-between items-center gap-10 hover:bg-primary-lighter rounded-xl group hover:cursor-pointer peer">
+                          <div class="flex items-center gap-2 ">
+                              <svg class="w-4 h-5 md:w-3 md:h-4"  viewBox="0 0 12 16" fill="none"
+                                   xmlns="http://www.w3.org/2000/svg">
+                                  <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M2.33333 0.666687C1.71449 0.666687 1.121 0.91252 0.683417 1.3501C0.245833 1.78769 0 2.38118 0 3.00002V13C0 13.6189 0.245833 14.2124 0.683417 14.6499C1.121 15.0875 1.71449 15.3334 2.33333 15.3334H11.3333C11.7015 15.3334 12 15.0349 12 14.6667V1.33335C12 0.965164 11.7015 0.666687 11.3333 0.666687H2.33333ZM2.66667 11H11V14.3334H2.66667C1.74619 14.3334 1 13.5872 1 12.6667C1 11.7462 1.74619 11 2.66667 11Z"
+                                        fill="#00A888"/>
+                              </svg>
 
-                            <span class="font-thin text-text-default group-hover:text-white group-[.active]:text-white">
+                              <span class="font-thin text-text-default group-hover:text-white group-[.active]:text-white">
                          Recent documents
                      </span>
-                        </div>
-                        <svg x-show="!open"class="" width="14" height="9" viewBox="0 0 14 9" fill="none"
-                             xmlns="http://www.w3.org/2000/svg">
-                            <path d="M13 1L7 7L1 1" stroke="#33363F" stroke-width="2"/>
-                        </svg>
-                        <svg x-show="open" class="" width="20" height="14" data-name="Layer 1"
-                             id="Layer_1" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg"><title/>
-                            <path d="M32,12.5,64,45.17,57.38,51.5,32,25.24,6.62,51.5,0,45.17Z"
-                                  data-name="&lt;Compound Path&gt;" id="_Compound_Path_"/>
-                        </svg>
-                    </div>
-                    <ul x-cloak
-                        x-show="open"
-                        class=" flex flex-col gap-4 px-4 max-w-sm  py-2 ">
-                        <li class="p-2 hover:bg-primary-lighter group">
-                            <span class="font-thin text-text-default group-hover:text-white">To build a fire - Jack London</span>
-                        </li>
-                        <li class="p-2 hover:bg-primary-lighter group">
-                            <span class="font-thin text-text-default group-hover:text-white">TED Talk - Lian Pin Koh - Conservation by drones</span>
-                        </li>
-                        <li class="p-2 hover:bg-primary-lighter group">
-                            <span class="font-thin text-text-default group-hover:text-white">ILS-L2-Transcripts - ILS-L2-Transcripts</span>
-                        </li>
-                        <li class="p-2 hover:bg-primary-lighter group">
-                            <span class="font-thin text-text-default group-hover:text-white">A Brief History of India/ Lịch sử văn minh Ấn Độ</span>
-                        </li>
-                        <li class="p-2 hover:bg-primary-lighter group">
-                            <span class="font-thin text-text-default group-hover:text-white"> CÂU HỎI ÔN TẬP MÔN TRIẾT - wwww</span>
-                        </li>
+                          </div>
+                          <svg x-show="!open"class="" width="14" height="9" viewBox="0 0 14 9" fill="none"
+                               xmlns="http://www.w3.org/2000/svg">
+                              <path d="M13 1L7 7L1 1" stroke="#33363F" stroke-width="2"/>
+                          </svg>
+                          <svg x-show="open" class="" width="20" height="14" data-name="Layer 1"
+                               id="Layer_1" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg"><title/>
+                              <path d="M32,12.5,64,45.17,57.38,51.5,32,25.24,6.62,51.5,0,45.17Z"
+                                    data-name="&lt;Compound Path&gt;" id="_Compound_Path_"/>
+                          </svg>
+                      </div>
+                      <ul x-cloak @click.outside="open=false"
+                          x-show="open"
+                          class=" flex flex-col gap-4 px-4 max-w-sm  py-2 overflow-y-auto  scrollbar-thin scrollbar-thumb-rounded-lg scrollbar-thumb-gray-200 hover:scrollbar-thumb-gray-700">
+                          <li class="p-2 hover:bg-primary-lighter group">
+                              <span class="font-thin text-text-default group-hover:text-white">To build a fire - Jack London</span>
+                          </li>
+                          <li class="p-2 hover:bg-primary-lighter group">
+                              <span class="font-thin text-text-default group-hover:text-white">TED Talk - Lian Pin Koh - Conservation by drones</span>
+                          </li>
+                          <li class="p-2 hover:bg-primary-lighter group">
+                              <span class="font-thin text-text-default group-hover:text-white">ILS-L2-Transcripts - ILS-L2-Transcripts</span>
+                          </li>
+                          <li class="p-2 hover:bg-primary-lighter group">
+                              <span class="font-thin text-text-default group-hover:text-white">A Brief History of India/ Lịch sử văn minh Ấn Độ</span>
+                          </li>
+                          <li class="p-2 hover:bg-primary-lighter group">
+                              <span class="font-thin text-text-default group-hover:text-white"> CÂU HỎI ÔN TẬP MÔN TRIẾT - wwww</span>
+                          </li>
 
-                    </ul>
+                      </ul>
 
 
-                </li>
-                <li class="" x-data="{open:false}">
-                    <div @click="open = !open"  class="drop-down flex p-4 justify-between items-center gap-10 hover:bg-primary-lighter rounded-xl group hover:cursor-pointer peer">
-                        <div class="flex items-center gap-2 ">
-                            <svg class="w-5 h-4 md:w-4 md:h-3.5" viewBox="0 0 16 13" fill="none"
-                                 xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" clip-rule="evenodd"
-                                      d="M1.33398 0C0.7817 0 0.333984 0.447716 0.333984 1V9.55556C0.333984 10.1078 0.7817 10.5556 1.33398 10.5556H5.46732C6.05079 10.5556 6.61037 10.778 7.02295 11.1739C7.43553 11.5698 7.66732 12.1068 7.66732 12.6667V2.81481C7.66732 2.06828 7.35827 1.35232 6.80816 0.82444C6.25806 0.29656 5.51195 0 4.73398 0H1.33398ZM14.6673 0C15.2196 0 15.6673 0.447716 15.6673 1V9.55556C15.6673 10.1078 15.2196 10.5556 14.6673 10.5556H10.534C9.95051 10.5556 9.39093 10.778 8.97835 11.1739C8.56577 11.5698 8.33398 12.1068 8.33398 12.6667V2.81482C8.33398 2.06828 8.64303 1.35232 9.19314 0.82444C9.74324 0.29656 10.4893 0 11.2673 0H14.6673Z"
-                                      fill="#00A888"/>
-                            </svg>
+                  </li>
+                  <li class="" x-data="{open:false}">
+                      <div @click="open = !open"  class="drop-down flex p-4 justify-between items-center gap-10 hover:bg-primary-lighter rounded-xl group hover:cursor-pointer peer">
+                          <div class="flex items-center gap-2 ">
+                              <svg class="w-5 h-4 md:w-4 md:h-3.5" viewBox="0 0 16 13" fill="none"
+                                   xmlns="http://www.w3.org/2000/svg">
+                                  <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M1.33398 0C0.7817 0 0.333984 0.447716 0.333984 1V9.55556C0.333984 10.1078 0.7817 10.5556 1.33398 10.5556H5.46732C6.05079 10.5556 6.61037 10.778 7.02295 11.1739C7.43553 11.5698 7.66732 12.1068 7.66732 12.6667V2.81481C7.66732 2.06828 7.35827 1.35232 6.80816 0.82444C6.25806 0.29656 5.51195 0 4.73398 0H1.33398ZM14.6673 0C15.2196 0 15.6673 0.447716 15.6673 1V9.55556C15.6673 10.1078 15.2196 10.5556 14.6673 10.5556H10.534C9.95051 10.5556 9.39093 10.778 8.97835 11.1739C8.56577 11.5698 8.33398 12.1068 8.33398 12.6667V2.81482C8.33398 2.06828 8.64303 1.35232 9.19314 0.82444C9.74324 0.29656 10.4893 0 11.2673 0H14.6673Z"
+                                        fill="#00A888"/>
+                              </svg>
 
-                            <span class="font-thin text-text-default group-hover:text-white group-[.active]:text-white">
+                              <span class="font-thin text-text-default group-hover:text-white group-[.active]:text-white">
                          Schools
                      </span>
-                        </div>
-                        <svg class="" x-show="!open" width="14" height="9" viewBox="0 0 14 9" fill="none"
-                             xmlns="http://www.w3.org/2000/svg">
-                            <path d="M13 1L7 7L1 1" stroke="#33363F" stroke-width="2"/>
-                        </svg>
-                        <svg x-show="open" class="" width="20" height="14" data-name="Layer 1"
-                             id="Layer_1" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg"><title/>
-                            <path d="M32,12.5,64,45.17,57.38,51.5,32,25.24,6.62,51.5,0,45.17Z"
-                                  data-name="&lt;Compound Path&gt;" id="_Compound_Path_"/>
-                        </svg>
-                    </div>
-                    <ul x-cloak
-                        x-show="open"
-                        class=" flex flex-col gap-4 px-4 max-w-sm  py-2 ">
-                        <li class="p-2 hover:bg-primary-lighter group">
-                            <span class="font-thin text-text-default group-hover:text-white">To build a fire - Jack London</span>
-                        </li>
-                        <li class="p-2 hover:bg-primary-lighter group">
-                            <span class="font-thin text-text-default group-hover:text-white">TED Talk - Lian Pin Koh - Conservation by drones</span>
-                        </li>
-                        <li class="p-2 hover:bg-primary-lighter group">
-                            <span class="font-thin text-text-default group-hover:text-white">ILS-L2-Transcripts - ILS-L2-Transcripts</span>
-                        </li>
-                        <li class="p-2 hover:bg-primary-lighter group">
-                            <span class="font-thin text-text-default group-hover:text-white">A Brief History of India/ Lịch sử văn minh Ấn Độ</span>
-                        </li>
-                        <li class="p-2 hover:bg-primary-lighter group">
-                            <span class="font-thin text-text-default group-hover:text-white"> CÂU HỎI ÔN TẬP MÔN TRIẾT - wwww</span>
-                        </li>
+                          </div>
+                          <svg class="" x-show="!open" width="14" height="9" viewBox="0 0 14 9" fill="none"
+                               xmlns="http://www.w3.org/2000/svg">
+                              <path d="M13 1L7 7L1 1" stroke="#33363F" stroke-width="2"/>
+                          </svg>
+                          <svg x-show="open" class="" width="20" height="14" data-name="Layer 1"
+                               id="Layer_1" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg"><title/>
+                              <path d="M32,12.5,64,45.17,57.38,51.5,32,25.24,6.62,51.5,0,45.17Z"
+                                    data-name="&lt;Compound Path&gt;" id="_Compound_Path_"/>
+                          </svg>
+                      </div>
+                      <ul x-cloak @click.outside="open=false"
+                          x-show="open"
+                          class=" flex flex-col gap-4 px-4 max-w-sm  py-2 overflow-y-auto  scrollbar-thin scrollbar-thumb-rounded-lg scrollbar-thumb-gray-200 hover:scrollbar-thumb-gray-700">
+                          <li class="p-2 hover:bg-primary-lighter group">
+                              <span class="font-thin text-text-default group-hover:text-white">To build a fire - Jack London</span>
+                          </li>
+                          <li class="p-2 hover:bg-primary-lighter group">
+                              <span class="font-thin text-text-default group-hover:text-white">TED Talk - Lian Pin Koh - Conservation by drones</span>
+                          </li>
+                          <li class="p-2 hover:bg-primary-lighter group">
+                              <span class="font-thin text-text-default group-hover:text-white">ILS-L2-Transcripts - ILS-L2-Transcripts</span>
+                          </li>
+                          <li class="p-2 hover:bg-primary-lighter group">
+                              <span class="font-thin text-text-default group-hover:text-white">A Brief History of India/ Lịch sử văn minh Ấn Độ</span>
+                          </li>
+                          <li class="p-2 hover:bg-primary-lighter group">
+                              <span class="font-thin text-text-default group-hover:text-white"> CÂU HỎI ÔN TẬP MÔN TRIẾT - wwww</span>
+                          </li>
 
-                    </ul>
+                      </ul>
 
-                </li>
-                <li class="" x-data="{open:false}">
-                    <div @click="open = !open" class="drop-down flex p-4 justify-between items-center gap-10 hover:bg-primary-lighter rounded-xl group hover:cursor-pointer peer">
-                        <div class="flex items-center gap-2 ">
-                            <svg  class="w-5 h-4 md:w-3.5 md:h-4" viewBox="0 0 14 13" fill="none"
-                                 xmlns="http://www.w3.org/2000/svg">
-                                <path d="M13.6673 9.2222C13.6673 9.61512 13.5112 9.99194 13.2334 10.2698C12.9556 10.5476 12.5788 10.7037 12.1858 10.7037H3.50405C3.37145 10.7037 3.24427 10.7564 3.1505 10.8501L1.18754 12.8131C0.872555 13.1281 0.333984 12.905 0.333984 12.4595V1.81479C0.333984 1.42188 0.490069 1.04506 0.7679 0.767229C1.04573 0.489397 1.42255 0.333313 1.81547 0.333313H12.1858C12.5788 0.333313 12.9556 0.489397 13.2334 0.767229C13.5112 1.04506 13.6673 1.42188 13.6673 1.81479V9.2222Z"
-                                      fill="#00A888"/>
-                            </svg>
+                  </li>
+                  <li class="" x-data="{open:false}">
+                      <div @click="open = !open" class="drop-down flex p-4 justify-between items-center gap-10 hover:bg-primary-lighter rounded-xl group hover:cursor-pointer peer">
+                          <div class="flex items-center gap-2 ">
+                              <svg  class="w-5 h-4 md:w-3.5 md:h-4" viewBox="0 0 14 13" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                  <path d="M13.6673 9.2222C13.6673 9.61512 13.5112 9.99194 13.2334 10.2698C12.9556 10.5476 12.5788 10.7037 12.1858 10.7037H3.50405C3.37145 10.7037 3.24427 10.7564 3.1505 10.8501L1.18754 12.8131C0.872555 13.1281 0.333984 12.905 0.333984 12.4595V1.81479C0.333984 1.42188 0.490069 1.04506 0.7679 0.767229C1.04573 0.489397 1.42255 0.333313 1.81547 0.333313H12.1858C12.5788 0.333313 12.9556 0.489397 13.2334 0.767229C13.5112 1.04506 13.6673 1.42188 13.6673 1.81479V9.2222Z"
+                                        fill="#00A888"/>
+                              </svg>
 
-                            <span class="font-thin text-text-default group-hover:text-white group-[.active]:text-white">
+                              <span class="font-thin text-text-default group-hover:text-white group-[.active]:text-white">
                       My community
                      </span>
-                        </div>
-                    </div>
-                    <div x-show="open" class=" p-4">
-                        <p class="text-text-default">You don’t have any documents yet
-                        </p>
-                    </div>
+                          </div>
+                      </div>
+                      <div x-show="open"  @click.outside="open=false" class=" p-4">
+                          <p class="text-text-default">You don’t have any documents yet
+                          </p>
+                      </div>
 
-                </li>
-                <li class="" x-data="{open:false}">
-                    <div @click="open = ! open" class="drop-down flex p-4 justify-between items-center gap-10 hover:bg-primary-lighter rounded-xl group hover:cursor-pointer peer">
-                        <div class="flex items-center gap-2 ">
-                            <svg class="w-5 h-5 md:h-4 md:w-4" viewBox="0 0 16 16" fill="none"
-                                 xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" clip-rule="evenodd"
-                                      d="M4.33268 10.6667H10.666C11.9231 10.6667 12.5516 10.6667 12.9422 10.2761C13.3327 9.88562 13.3327 9.25708 13.3327 8V4.66667C13.3327 3.40959 13.3327 2.78105 12.9422 2.39052C12.5516 2 11.9231 2 10.666 2H5.33268C4.0756 2 3.44706 2 3.05654 2.39052C2.66602 2.78105 2.66602 3.40959 2.66602 4.66667V12.3333C2.66602 11.4129 3.41221 10.6667 4.33268 10.6667ZM5.99935 3.33333C4.89478 3.33333 3.99935 4.22876 3.99935 5.33333C3.99935 6.4379 4.89478 7.33333 5.99935 7.33333L9.99935 7.33333C11.1039 7.33333 11.9993 6.4379 11.9993 5.33333C11.9993 4.22876 11.1039 3.33333 9.99935 3.33333L5.99935 3.33333Z"
-                                      fill="#00A888"/>
-                                <path d="M12.9422 10.2761L12.2351 9.56903L12.2351 9.56904L12.9422 10.2761ZM12.9422 2.39052L12.2351 3.09763L12.2351 3.09763L12.9422 2.39052ZM3.99935 5.33333H4.99935H3.99935ZM5.99935 3.33333V2.33333V3.33333ZM5.99935 7.33333L5.99935 6.33333H5.99935V7.33333ZM9.99935 7.33333L9.99935 8.33333H9.99935V7.33333ZM11.9993 5.33333L12.9993 5.33333V5.33333H11.9993ZM9.99935 3.33333V2.33333V3.33333ZM10.666 9.66667H4.33268V11.6667H10.666V9.66667ZM12.2351 9.56904C12.2344 9.56964 12.2344 9.56961 12.2349 9.56924C12.2353 9.56886 12.2357 9.56865 12.2356 9.56871C12.2355 9.56878 12.2343 9.56952 12.2318 9.57085C12.2292 9.5722 12.2248 9.57435 12.2181 9.57712C12.189 9.58907 12.1245 9.60946 11.9958 9.62677C11.7148 9.66454 11.3228 9.66667 10.666 9.66667V11.6667C11.2663 11.6667 11.8171 11.6688 12.2623 11.6089C12.7363 11.5452 13.2372 11.3953 13.6493 10.9832L12.2351 9.56904ZM12.3327 8C12.3327 8.65681 12.3306 9.04882 12.2928 9.32978C12.2755 9.45853 12.2551 9.52301 12.2431 9.55205C12.2404 9.55877 12.2382 9.56319 12.2369 9.56577C12.2355 9.56831 12.2348 9.56945 12.2347 9.56955C12.2347 9.56965 12.2349 9.56933 12.2353 9.56886C12.2356 9.5684 12.2357 9.56843 12.2351 9.56903L13.6493 10.9832C14.0613 10.5712 14.2112 10.0703 14.275 9.59628C14.3348 9.15107 14.3327 8.60027 14.3327 8H12.3327ZM12.3327 4.66667V8H14.3327V4.66667H12.3327ZM12.2351 3.09763C12.2357 3.09824 12.2356 3.09826 12.2353 3.0978C12.2349 3.09734 12.2347 3.09702 12.2347 3.09711C12.2348 3.09722 12.2355 3.09835 12.2369 3.1009C12.2382 3.10347 12.2404 3.10789 12.2431 3.11462C12.2551 3.14366 12.2755 3.20814 12.2928 3.33689C12.3306 3.61785 12.3327 4.00986 12.3327 4.66667H14.3327C14.3327 4.0664 14.3348 3.5156 14.275 3.07039C14.2112 2.59642 14.0613 2.09545 13.6493 1.68342L12.2351 3.09763ZM10.666 3C11.3228 3 11.7148 3.00212 11.9958 3.0399C12.1245 3.05721 12.189 3.0776 12.2181 3.08954C12.2248 3.09231 12.2292 3.09447 12.2318 3.09581C12.2343 3.09714 12.2355 3.09788 12.2356 3.09795C12.2357 3.09801 12.2353 3.0978 12.2349 3.09743C12.2344 3.09705 12.2344 3.09702 12.2351 3.09763L13.6493 1.68342C13.2372 1.27139 12.7363 1.12146 12.2623 1.05773C11.8171 0.997876 11.2663 1 10.666 1V3ZM5.33268 3H10.666V1H5.33268V3ZM3.76365 3.09763C3.76426 3.09702 3.76428 3.09705 3.76382 3.09743C3.76335 3.0978 3.76304 3.09801 3.76313 3.09795C3.76324 3.09788 3.76437 3.09714 3.76691 3.09581C3.76949 3.09447 3.77391 3.09231 3.78063 3.08954C3.80967 3.0776 3.87416 3.05721 4.0029 3.0399C4.28386 3.00212 4.67587 3 5.33268 3V1C4.73241 1 4.18161 0.997876 3.73641 1.05773C3.26243 1.12146 2.76146 1.27139 2.34943 1.68342L3.76365 3.09763ZM3.66602 4.66667C3.66602 4.00986 3.66814 3.61785 3.70591 3.33689C3.72322 3.20814 3.74361 3.14366 3.75556 3.11462C3.75833 3.10789 3.76048 3.10347 3.76183 3.10089C3.76316 3.09835 3.7639 3.09722 3.76397 3.09711C3.76403 3.09702 3.76382 3.09734 3.76344 3.0978C3.76307 3.09826 3.76304 3.09824 3.76365 3.09763L2.34943 1.68342C1.9374 2.09545 1.78747 2.59642 1.72375 3.07039C1.66389 3.5156 1.66602 4.0664 1.66602 4.66667H3.66602ZM3.66602 12.3333V4.66667H1.66602V12.3333H3.66602ZM4.33268 9.66667C2.85992 9.66667 1.66602 10.8606 1.66602 12.3333H3.66602C3.66602 11.9651 3.96449 11.6667 4.33268 11.6667V9.66667ZM4.99935 5.33333C4.99935 4.78105 5.44706 4.33333 5.99935 4.33333V2.33333C4.34249 2.33333 2.99935 3.67648 2.99935 5.33333H4.99935ZM5.99935 6.33333C5.44706 6.33333 4.99935 5.88562 4.99935 5.33333H2.99935C2.99935 6.99019 4.34249 8.33333 5.99935 8.33333V6.33333ZM9.99935 6.33333L5.99935 6.33333L5.99935 8.33333L9.99935 8.33333L9.99935 6.33333ZM10.9993 5.33333C10.9993 5.88562 10.5516 6.33333 9.99935 6.33333V8.33333C11.6562 8.33333 12.9993 6.99019 12.9993 5.33333L10.9993 5.33333ZM9.99935 4.33333C10.5516 4.33333 10.9993 4.78105 10.9993 5.33333H12.9993C12.9993 3.67648 11.6562 2.33333 9.99935 2.33333V4.33333ZM5.99935 4.33333L9.99935 4.33333V2.33333L5.99935 2.33333V4.33333ZM7.33268 13H4.33268V15H7.33268V13ZM1.66602 12.3333C1.66602 13.8061 2.85992 15 4.33268 15V13C3.96449 13 3.66602 12.7015 3.66602 12.3333H1.66602Z"
-                                      fill="#00A888"/>
-                                <path d="M13.3327 14H6.66602" stroke="#00A888" stroke-width="2" stroke-linecap="round"/>
-                            </svg>
+                  </li>
+                  <li class="" x-data="{open:false}">
+                      <div @click="open = ! open" class="drop-down flex p-4 justify-between items-center gap-10 hover:bg-primary-lighter rounded-xl group hover:cursor-pointer peer">
+                          <div class="flex items-center gap-2 ">
+                              <svg class="w-5 h-5 md:h-4 md:w-4" viewBox="0 0 16 16" fill="none"
+                                   xmlns="http://www.w3.org/2000/svg">
+                                  <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M4.33268 10.6667H10.666C11.9231 10.6667 12.5516 10.6667 12.9422 10.2761C13.3327 9.88562 13.3327 9.25708 13.3327 8V4.66667C13.3327 3.40959 13.3327 2.78105 12.9422 2.39052C12.5516 2 11.9231 2 10.666 2H5.33268C4.0756 2 3.44706 2 3.05654 2.39052C2.66602 2.78105 2.66602 3.40959 2.66602 4.66667V12.3333C2.66602 11.4129 3.41221 10.6667 4.33268 10.6667ZM5.99935 3.33333C4.89478 3.33333 3.99935 4.22876 3.99935 5.33333C3.99935 6.4379 4.89478 7.33333 5.99935 7.33333L9.99935 7.33333C11.1039 7.33333 11.9993 6.4379 11.9993 5.33333C11.9993 4.22876 11.1039 3.33333 9.99935 3.33333L5.99935 3.33333Z"
+                                        fill="#00A888"/>
+                                  <path d="M12.9422 10.2761L12.2351 9.56903L12.2351 9.56904L12.9422 10.2761ZM12.9422 2.39052L12.2351 3.09763L12.2351 3.09763L12.9422 2.39052ZM3.99935 5.33333H4.99935H3.99935ZM5.99935 3.33333V2.33333V3.33333ZM5.99935 7.33333L5.99935 6.33333H5.99935V7.33333ZM9.99935 7.33333L9.99935 8.33333H9.99935V7.33333ZM11.9993 5.33333L12.9993 5.33333V5.33333H11.9993ZM9.99935 3.33333V2.33333V3.33333ZM10.666 9.66667H4.33268V11.6667H10.666V9.66667ZM12.2351 9.56904C12.2344 9.56964 12.2344 9.56961 12.2349 9.56924C12.2353 9.56886 12.2357 9.56865 12.2356 9.56871C12.2355 9.56878 12.2343 9.56952 12.2318 9.57085C12.2292 9.5722 12.2248 9.57435 12.2181 9.57712C12.189 9.58907 12.1245 9.60946 11.9958 9.62677C11.7148 9.66454 11.3228 9.66667 10.666 9.66667V11.6667C11.2663 11.6667 11.8171 11.6688 12.2623 11.6089C12.7363 11.5452 13.2372 11.3953 13.6493 10.9832L12.2351 9.56904ZM12.3327 8C12.3327 8.65681 12.3306 9.04882 12.2928 9.32978C12.2755 9.45853 12.2551 9.52301 12.2431 9.55205C12.2404 9.55877 12.2382 9.56319 12.2369 9.56577C12.2355 9.56831 12.2348 9.56945 12.2347 9.56955C12.2347 9.56965 12.2349 9.56933 12.2353 9.56886C12.2356 9.5684 12.2357 9.56843 12.2351 9.56903L13.6493 10.9832C14.0613 10.5712 14.2112 10.0703 14.275 9.59628C14.3348 9.15107 14.3327 8.60027 14.3327 8H12.3327ZM12.3327 4.66667V8H14.3327V4.66667H12.3327ZM12.2351 3.09763C12.2357 3.09824 12.2356 3.09826 12.2353 3.0978C12.2349 3.09734 12.2347 3.09702 12.2347 3.09711C12.2348 3.09722 12.2355 3.09835 12.2369 3.1009C12.2382 3.10347 12.2404 3.10789 12.2431 3.11462C12.2551 3.14366 12.2755 3.20814 12.2928 3.33689C12.3306 3.61785 12.3327 4.00986 12.3327 4.66667H14.3327C14.3327 4.0664 14.3348 3.5156 14.275 3.07039C14.2112 2.59642 14.0613 2.09545 13.6493 1.68342L12.2351 3.09763ZM10.666 3C11.3228 3 11.7148 3.00212 11.9958 3.0399C12.1245 3.05721 12.189 3.0776 12.2181 3.08954C12.2248 3.09231 12.2292 3.09447 12.2318 3.09581C12.2343 3.09714 12.2355 3.09788 12.2356 3.09795C12.2357 3.09801 12.2353 3.0978 12.2349 3.09743C12.2344 3.09705 12.2344 3.09702 12.2351 3.09763L13.6493 1.68342C13.2372 1.27139 12.7363 1.12146 12.2623 1.05773C11.8171 0.997876 11.2663 1 10.666 1V3ZM5.33268 3H10.666V1H5.33268V3ZM3.76365 3.09763C3.76426 3.09702 3.76428 3.09705 3.76382 3.09743C3.76335 3.0978 3.76304 3.09801 3.76313 3.09795C3.76324 3.09788 3.76437 3.09714 3.76691 3.09581C3.76949 3.09447 3.77391 3.09231 3.78063 3.08954C3.80967 3.0776 3.87416 3.05721 4.0029 3.0399C4.28386 3.00212 4.67587 3 5.33268 3V1C4.73241 1 4.18161 0.997876 3.73641 1.05773C3.26243 1.12146 2.76146 1.27139 2.34943 1.68342L3.76365 3.09763ZM3.66602 4.66667C3.66602 4.00986 3.66814 3.61785 3.70591 3.33689C3.72322 3.20814 3.74361 3.14366 3.75556 3.11462C3.75833 3.10789 3.76048 3.10347 3.76183 3.10089C3.76316 3.09835 3.7639 3.09722 3.76397 3.09711C3.76403 3.09702 3.76382 3.09734 3.76344 3.0978C3.76307 3.09826 3.76304 3.09824 3.76365 3.09763L2.34943 1.68342C1.9374 2.09545 1.78747 2.59642 1.72375 3.07039C1.66389 3.5156 1.66602 4.0664 1.66602 4.66667H3.66602ZM3.66602 12.3333V4.66667H1.66602V12.3333H3.66602ZM4.33268 9.66667C2.85992 9.66667 1.66602 10.8606 1.66602 12.3333H3.66602C3.66602 11.9651 3.96449 11.6667 4.33268 11.6667V9.66667ZM4.99935 5.33333C4.99935 4.78105 5.44706 4.33333 5.99935 4.33333V2.33333C4.34249 2.33333 2.99935 3.67648 2.99935 5.33333H4.99935ZM5.99935 6.33333C5.44706 6.33333 4.99935 5.88562 4.99935 5.33333H2.99935C2.99935 6.99019 4.34249 8.33333 5.99935 8.33333V6.33333ZM9.99935 6.33333L5.99935 6.33333L5.99935 8.33333L9.99935 8.33333L9.99935 6.33333ZM10.9993 5.33333C10.9993 5.88562 10.5516 6.33333 9.99935 6.33333V8.33333C11.6562 8.33333 12.9993 6.99019 12.9993 5.33333L10.9993 5.33333ZM9.99935 4.33333C10.5516 4.33333 10.9993 4.78105 10.9993 5.33333H12.9993C12.9993 3.67648 11.6562 2.33333 9.99935 2.33333V4.33333ZM5.99935 4.33333L9.99935 4.33333V2.33333L5.99935 2.33333V4.33333ZM7.33268 13H4.33268V15H7.33268V13ZM1.66602 12.3333C1.66602 13.8061 2.85992 15 4.33268 15V13C3.96449 13 3.66602 12.7015 3.66602 12.3333H1.66602Z"
+                                        fill="#00A888"/>
+                                  <path d="M13.3327 14H6.66602" stroke="#00A888" stroke-width="2" stroke-linecap="round"/>
+                              </svg>
 
-                            <span class="font-thin text-text-default group-hover:text-white group-[.active]:text-white">
+                              <span class="font-thin text-text-default group-hover:text-white group-[.active]:text-white">
                          Subjects
                      </span>
-                        </div>
-                    </div>
-                    <div x-show="open" class=" p-4">
-                        <p class="text-text-default">You don’t have any documents yet
-                        </p>
-                    </div>
+                          </div>
+                      </div>
+                      <div x-show="open" @click.outside="open=false" class=" p-4">
+                          <p class="text-text-default">You don’t have any documents yet
+                          </p>
+                      </div>
 
-                </li>
-                <li class="" x-data="{open:false}">
-                    <div @click="open = !open" class="drop-down flex p-4 justify-between items-center gap-10 hover:bg-primary-lighter rounded-xl group hover:cursor-pointer peer">
-                        <div class="flex items-center gap-2 ">
-                            <svg class="w-5 h-5 md:w-3.5 md:h-3.5"  viewBox="0 0 14 14" fill="none"
-                                 xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" clip-rule="evenodd"
-                                      d="M13.6673 7C13.6673 3.3181 10.6826 0.333329 7.00065 0.333329C3.31875 0.333329 0.333984 3.3181 0.333984 7C0.333984 10.342 2.79314 13.1097 6.00065 13.5922V8.08088L4.37442 9.7071L2.96021 8.29289L6.29354 4.95956L7.00065 4.25245L7.70776 4.95956L11.0411 8.29289L9.62688 9.7071L8.00065 8.08088V13.5922C11.2082 13.1097 13.6673 10.342 13.6673 7Z"
-                                      fill="#00A888"/>
-                            </svg>
+                  </li>
+                  <li class="" x-data="{open:false}">
+                      <div @click="open = !open" class="drop-down flex p-4 justify-between items-center gap-10 hover:bg-primary-lighter rounded-xl group hover:cursor-pointer peer">
+                          <div class="flex items-center gap-2 ">
+                              <svg class="w-5 h-5 md:w-3.5 md:h-3.5"  viewBox="0 0 14 14" fill="none"
+                                   xmlns="http://www.w3.org/2000/svg">
+                                  <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M13.6673 7C13.6673 3.3181 10.6826 0.333329 7.00065 0.333329C3.31875 0.333329 0.333984 3.3181 0.333984 7C0.333984 10.342 2.79314 13.1097 6.00065 13.5922V8.08088L4.37442 9.7071L2.96021 8.29289L6.29354 4.95956L7.00065 4.25245L7.70776 4.95956L11.0411 8.29289L9.62688 9.7071L8.00065 8.08088V13.5922C11.2082 13.1097 13.6673 10.342 13.6673 7Z"
+                                        fill="#00A888"/>
+                              </svg>
 
 
-                            <span class="font-thin text-text-default group-hover:text-white group-[.active]:text-white">
+                              <span class="font-thin text-text-default group-hover:text-white group-[.active]:text-white">
                          Uploads
                      </span>
-                        </div>
-                    </div>
-                    <div x-show="open" class=" p-4">
-                        <p class="text-text-default">You don’t have any documents yet
-                        </p>
-                    </div>
+                          </div>
+                      </div>
+                      <div x-show="open" @click.outside="open=false" class=" p-4">
+                          <p class="text-text-default">You don’t have any documents yet
+                          </p>
+                      </div>
 
 
-                </li>
+                  </li>
 
 
-            </ul>
+              </ul>
         </div>
     </div>
 </div>
