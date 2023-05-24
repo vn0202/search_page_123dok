@@ -892,8 +892,8 @@ html {
   width: 104px;
 }
 
-.w-\[289px\] {
-  width: 289px;
+.w-\[400px\] {
+  width: 400px;
 }
 
 .w-\[80vw\] {
@@ -902,10 +902,6 @@ html {
 
 .w-full {
   width: 100%;
-}
-
-.w-\[400px\] {
-  width: 400px;
 }
 
 .max-w-full {
