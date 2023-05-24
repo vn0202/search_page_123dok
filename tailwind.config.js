@@ -27,6 +27,7 @@ module.exports = {
       boxShadow: {
         '3xl': '0px 5px 5px -5px rgba(0, 0, 0, 0.25)',
         'hover':"6px 8px 5px #cccccc",
+        'hover-both-side': "4px 4px 8px #cccccc, -4px 0px 10px #cccccc"
       },
       borderRadius:{
         '4xl':'30px',
@@ -47,6 +48,8 @@ module.exports = {
   },
   plugins: [
     require("tailwind-scrollbar")({ nocompatible: true }),
+    require('autoprefixer'),
+
   ],
 }
 
