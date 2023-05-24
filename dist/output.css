@@ -904,6 +904,18 @@ html {
   width: 100%;
 }
 
+.w-52 {
+  width: 13rem;
+}
+
+.w-\[2\/12\] {
+  width: 2/12;
+}
+
+.w-\[4\/12\] {
+  width: 4/12;
+}
+
 .min-w-max {
   min-width: -moz-max-content;
   min-width: max-content;
