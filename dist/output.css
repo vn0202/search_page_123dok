@@ -904,6 +904,10 @@ html {
   width: 100%;
 }
 
+.w-\[400px\] {
+  width: 400px;
+}
+
 .max-w-full {
   max-width: 100%;
 }
