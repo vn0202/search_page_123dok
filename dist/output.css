@@ -925,6 +925,10 @@ html {
   max-width: 24rem;
 }
 
+.max-w-\[2\/12\] {
+  max-width: 2/12;
+}
+
 .grow {
   flex-grow: 1;
 }
@@ -1844,6 +1848,14 @@ html {
 
   .md\:w-auto {
     width: auto;
+  }
+
+  .md\:w-4\/12 {
+    width: 33.333333%;
+  }
+
+  .md\:w-2\/12 {
+    width: 16.666667%;
   }
 
   .md\:min-w-\[550px\] {
