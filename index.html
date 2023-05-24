@@ -315,9 +315,9 @@
                 <p x-show="!open" x-text="current"></p>
             </div>
             <ul x-show="open" @click.outside="open = false"
-                    class="absolute bg-white rounded top-[50%] left-full  border border-solid border-slate-300    z-10 ">
+                    class="absolute bg-white rounded top-[50%] left-full  border border-solid border-slate-300    z-10 w-[289px] ">
                 <template x-for="(selection,index) in selections" :key="index">
-                    <li class="" style="min-width: max-content;">
+                    <li >
                         <p @click="current=selections[index]; open=false" class="block py-4 pl-2 lg:pr-10 text-text-default-darker font-medium hover:bg-slate-200" x-text="selection" ></p>
                     </li>
                 </template>

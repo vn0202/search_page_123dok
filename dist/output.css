@@ -892,17 +892,16 @@ html {
   width: 104px;
 }
 
+.w-\[289px\] {
+  width: 289px;
+}
+
 .w-\[80vw\] {
   width: 80vw;
 }
 
 .w-full {
   width: 100%;
-}
-
-.min-w-max {
-  min-width: -moz-max-content;
-  min-width: max-content;
 }
 
 .max-w-full {
